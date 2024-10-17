@@ -1,0 +1,124 @@
+\documentclass[12pt,a4paper]{article}
+
+% Márgenes
+\usepackage[left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+% Paquetes de tipografía
+\usepackage{lmodern} % Latin Modern font (formal and professional)
+\usepackage[T1]{fontenc} % Codificación de fuente
+\usepackage[utf8]{inputenc} % Soporte UTF-8
+\usepackage{setspace} % Para ajustar el espaciado
+\usepackage{microtype} % Mejora la calidad tipográfica del documento
+
+% Paquete para tablas largas y estética de tablas
+\usepackage{longtable}
+\usepackage{booktabs}
+
+% Paquete para cajas de color
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{graphicx} % Para incluir el logo
+\usepackage{tikz} % Para crear figuras y formas
+
+% Color y enlaces
+\usepackage{xcolor} % Soporte de color
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black]{hyperref} % Enlaces negros para seriedad
+
+% Paquete para encabezados y pies de página
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{\leftmark}} % Cabecera con sección
+\fancyhead[R]{\thepage} % Número de página
+\fancyfoot[L]{\textit{Departamento de informática}} % Pie de página con autor
+\fancyfoot[R]{\textit{\today}} % Pie de página con fecha
+
+% Paquete para bibliografía
+\usepackage{biblatex}
+\addbibresource{referencias.bib} % Archivo de bibliografía
+
+% Espaciado entre líneas
+\setstretch{1.5} % Espaciado 1.5 para mejorar la legibilidad
+
+% Definición de secciones sobrias
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\itshape}{\thesubsubsection}{1em}{}
+
+% Definición para \tightlist
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Reducción de tamaño de fuente en todas las tablas
+\usepackage{etoolbox} % Para aplicar configuraciones globales
+\AtBeginEnvironment{tabular}{\small} % Aplica \small a todas las tablas
+\AtBeginEnvironment{longtable}{\small} % Aplica \small también a las tablas largas
+
+% Comando para personalizar la portada
+\newcommand{\customcover}{
+  \begin{titlepage}
+    \begin{tikzpicture}[overlay, remember picture]
+      % Fondo verde más sobrio
+      \fill[green!50!black] (current page.south west) rectangle (current page.north east);
+      
+      % Zona del logo con franja blanca y ajuste preciso
+      \fill[white] (current page.south east) ++(0,0) -- ++(8,14) -- ++(-16,-9) -- cycle;
+      
+      % Posición precisa del logo dentro del triángulo
+      \node[anchor=center] at ([shift={(-3cm,5cm)}]current page.south east) {\includegraphics[width=4cm]{logo.png}};
+    \end{tikzpicture}
+
+    % Información del curso
+    \vspace*{3cm}
+    \begin{flushleft}
+      \color{white}\Huge\bfseries Programación Didáctica
+    \end{flushleft}
+    \vspace{0.5cm}
+    \begin{flushleft}
+      \color{white}\Large\bfseries Curso de especialización en ciberseguridad\\
+      en entornos de las tecnologías de la información
+    \end{flushleft}
+    
+    % Información de detalles
+    \vfill
+    \begin{flushleft}
+      \color{white}\Large\bfseries Curso 2024 / 2025
+    \end{flushleft}
+    \vspace{2cm}
+    
+    % Información adicional
+    \begin{flushleft}
+      \color{white}\large Departamento de informática\\
+      I.E.S. Rafael Alberti, Cádiz
+    \end{flushleft}
+  \end{titlepage}
+}
+
+% Configuración de títulos
+\title{\textbf{Programación Didáctica}}
+\author{Departamento de informática}
+\date{\today}
+
+\begin{document}
+
+% Portada personalizada
+\customcover
+\thispagestyle{empty} % Sin encabezado en la primera página
+
+\newpage
+
+% Cambiar "Contents" a "Índice"
+\renewcommand{\contentsname}{Índice}
+
+% Índice
+\tableofcontents
+\newpage
+
+% Aquí se inserta el contenido del archivo markdown
+$body$
+
+% Bibliografía
+\printbibliography
+
+\end{document}
