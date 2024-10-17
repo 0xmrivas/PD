@@ -1,0 +1,43 @@
+name: Build PDF
+
+# Ejecutar la acción en cada push o pull request en la rama principal
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Checkout del repositorio
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # 2. Instalar las dependencias (instalamos Pandoc y LaTeX)
+    - name: Install Pandoc and LaTeX
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra
+
+    # 3. Ejecutar Pandoc para generar el PDF
+    - name: Build PDF from Markdown
+      run: pandoc PD.md -o PD.pdf --template=template.tex --pdf-engine=pdflatex
+
+    # 4. Confirmar si el archivo PDF ha cambiado
+    - name: Check for PDF changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add PD.pdf
+        git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update PD.pdf"
+
+    # 5. Subir el nuevo PDF al repositorio
+    - name: Push PDF to repository
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
