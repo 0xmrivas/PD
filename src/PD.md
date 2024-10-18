@@ -437,6 +437,8 @@ Los módulos profesionales de este curso de especialización quedan desarrollado
 
 # MOD 6
 
+# MOD 7
+
 # Registro de versiones
 
 | Responsable | Acción (Redactado, Revisado) | Fecha | Versión |
