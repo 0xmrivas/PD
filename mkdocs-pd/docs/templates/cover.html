@@ -15,8 +15,8 @@
     {% endif %}
 </div>
 
-
 <style>
+/* Configuración de la primera página */
 @page :first {
     size: A4;
     margin: 2cm 2cm 11cm 1cm;
@@ -28,70 +28,94 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+/* Configuración general de las páginas */
 @page {
     size: A4;
-    margin: 2.54cm; /* Aplica margen de 2.54cm a todo el documento */
+    margin: 2.54cm;
     font-family: 'Source Sans Pro', sans-serif;
-    color:black !important;
 }
 
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Contenedor de la portada */
 #doc-cover {
     display: flex;
     flex-direction: column;
-    height: 16.7cm; /* Altura total de la página */
+    height: 16.7cm;
     color: white !important;
-    overflow: hidden; /* Previene desbordamiento */
+    overflow: hidden;
 }
 
 .cover-year {
     flex: 0 0 2cm;
-    background-color: #E93456  !important;
+    background-color: #E93456 !important;
     text-align: right;
     font-size: 11pt;
-    margin: 0cm;
+    margin: 0;
     color: white !important;
 }
 
 .cover-title {
-    flex: 0 0 18cm; /* Permite que crezca y ocupe el espacio disponible */
+    flex: 1;
     max-height: 18cm;
-    background-color: #E93456  !important;
-    align-items: flex-start;
-    text-align: left !important;
+    background-color: #E93456 !important;
     padding: 1cm;
-    margin: 0cm;
     color: white !important;
+    text-align: left !important;
 
     h1 {
         padding-top: 4cm;
         font-size: 36pt;
-        border-bottom: none !important; 
-        margin-bottom: 0.4cm; /* Reduce la separación inferior de h1 */
+        margin-bottom: 0.4cm;
     }
+
     h2 {
-        border-bottom: none !important; 
         font-size: 16pt;
-        margin-top: 0; /* Elimina el margen superior de h2 */
+        margin-top: 0;
     }
 }
 
+/* Información del departamento */
 .cover-department {
     text-align: left !important;
     position: absolute;
-    bottom: -10cm; /* Ajusta la distancia desde el borde inferior */
-    left: 0cm;    
-    background-color: #E93456  !important;
+    bottom: -10cm;
+    left: 0;
+    background-color: #E93456 !important;
     color: white !important;
     max-width: 70%;
     padding: 1cm;
-    overflow-y: auto; /* Permite scroll si el contenido es muy largo */
+    overflow-y: auto;
 }
 
-/* El resto de tus estilos permanecen igual */
-article .cover-title h1 h2 {
-    border-bottom: none; 
+
+/* Estilos para tablas */
+table {
+    width: 100% !important;
+    border-collapse: collapse !important;
 }
 
+table tr:nth-child(even) {
+    background-color: #FFE5EA;
+}
+
+table th {
+    background-color: #E93456 !important;
+    color: white !important;
+    font-weight: bold !important;
+    padding: 10px !important;
+    text-transform: uppercase;
+}
+
+table th, table td {
+    vertical-align: middle !important;
+    text-align: left !important;
+    padding: 10px !important;
+}
+
+/* Tipografía personalizada */
 @font-face {
     font-family: 'Source Sans Pro';
     src: url('assets/fonts/SourceSans3-Regular.ttf.woff') format('woff');
@@ -102,46 +126,11 @@ article .cover-title h1 h2 {
 @font-face {
     font-family: 'Source Sans Pro';
     src: url('assets/fonts/SourceSans3-Bold.ttf.woff') format('woff');
-    font-weight: bold; /* O ajusta según sea necesario */
-    font-style: italic; /* Cambia a normal si no deseas itálico */
-}
-
-body {
-    font-family: 'Source Sans Pro', sans-serif;
-    color:black !important;
-
+    font-weight: bold;
+    font-style: italic;
 }
 
 p {
     text-align: justify;
-    color:black !important;
 }
-
-table {
-  border-collapse: collapse !important;
-  width: 100% !important;
-
-  tr {
-    &:nth-child(even) {
-      background-color: #FFE5EA;
-    }
-  }
-
-  th {
-    background-color: #E93456 !important;
-    color: white !important;
-    font-weight: bold !important;
-    padding: 10px !important;
-    text-transform: uppercase;
-  }
-
-  th, td {
-    vertical-align: middle !important;
-    text-align: left !important;
-    padding: 10px !important;
-    height: 100% !important;
-  }
-}
-
-
 </style>
