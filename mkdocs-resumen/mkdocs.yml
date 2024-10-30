@@ -2,8 +2,6 @@ site_name: Resumen Programaciones Didácticas del CE en Ciberseguridad
 theme:
   name: material
   language: es
-  logo: assets/logo-blanco.svg
-  favicon: assets/logo-alberties.png
   palette:
     - media: "(prefers-color-scheme: light)" 
       scheme: default
@@ -38,40 +36,18 @@ plugins:
   - with-pdf:
       author: Equipo educativo de ciberseguridad del IES Rafael Alberti
       copyright: CC BY-SA 4.0
-      #
+      debug_html: true
       cover: true
-      #back_cover: true
-      cover_title: Resumen Programaciones Didácticas de Ciberseguridad
-      cover_subtitle: Curso 2024-2025
-      #custom_template_path: TEMPLATES PATH
-      #
-      toc_title: Tabla de contenidos
-      #heading_shift: false
-      #toc_level: 3
-      #ordered_chapter_level: 2
-      #excludes_children:
-      #    - 'release-notes/:upgrading'
-      #    - 'release-notes/:changelog'
-      #
-      #exclude_pages:
-      #    - 'bugs/'
-      #    - 'appendix/contribute/'
-      #convert_iframe:
-      #    - src: IFRAME SRC
-      #      img: POSTER IMAGE URL
-      #      text: ALTERNATE TEXT
-      #    - src: ...
-      #two_columns_level: 3
-      #
-    #render_js: true
-      #headless_chrome_path: headless-chromium
-      #
+      toc_title: "Índice"
+      cover_title: Resumen Programaciones Didácticas
+      cover_subtitle: Curso 
+      cover_logo: assets/portada-ies-rafael-alberti.svg
+      custom_template_path: docs/templates
       output_path: ../../resumen.pdf
-      #enabled_if_env: ENABLE_PDF_EXPORT
-      #
-      #debug_html: true
-      #show_anchors: true
-    #verbose: true
+extra:
+  course_year: "Curso 2024 / 2025"
+  department: "Departamento de informática"
+  institution: "IES Rafael Alberti, Cádiz"
 
 # Page tree
 nav:

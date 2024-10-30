@@ -418,12 +418,12 @@ Además, está previsto realizar un cuestionario que se pasará a todos los alum
 
 Los módulos profesionales de este curso de especialización quedan desarrollados en el anexo I de este real decreto, cumpliendo lo previsto en el artículo 10, apartado 3 del Real Decreto 1147/2011, de 29 de julio, por el que se establece la ordenación general de la formación profesional del sistema educativo. Son los que a continuación se relacionan:
 
-- [5021. Incidentes de ciberseguridad](#incidentes-de-ciberseguridad).
-- [5022. Bastionado de redes y sistemas](#bastionado-de-redes-y-sistemas).
-- [5023. Puesta en producción segura](#puesta-en-produccion-segura).
-- [5024. Análisis forense informático](#analisis-forense-informatico).
-- [5025. Hacking ético](#hacking-etico).
-- [5026. Normativa de ciberseguridad](#normativa-de-ciberseguridad).
+- 5021. Incidentes de ciberseguridad.
+- 5022. Bastionado de redes y sistemas.
+- 5023. Puesta en producción segura.
+- 5024. Análisis forense informático.
+- 5025. Hacking ético.
+- 5026. Normativa de ciberseguridad.
 
 # Módulo Profesional. Incidentes de ciberseguridad (5021)
 
@@ -457,13 +457,13 @@ La concreción de los mismos y su secuenciación de aprendizaje se han realizado
 
 ### Selección y secuencia de contenidos 
 
-| Unidades didácticas |  | Sesiones | RA | Criterios |  |
+| Unidades didácticas |  | Sesiones | RA | Criterios | Trimestre |
 | :---: | :---- | :---: | :---: | :---: | ----- |
-| UD1 | Desarrollo de planes de prevención y concienciación | 30 | RA1 | a)..e) | 1er  trimestre (65 horas) |
-| UD2 | Analiza incidentes de ciberseguridad | 35 | RA2 | a)..e) |  |
-| UD3 | Investiga incidentes de ciberseguridad | 30 | RA3 | a)..e) |  2o  trimestre (85 horas) |
-| UD4 | Implementa medidas de ciberseguridad en redes y sistemas  | 35 | RA4 | a)..f) |  |
-| UD5 | Documenta y notifica incidentes de ciberseguridad | 20 | RA5 | a)..e) |  |
+| UD1 | Desarrollo de planes de prevención y concienciación | 30 | RA1 | a)..e) | 1º |
+| UD2 | Analiza incidentes de ciberseguridad | 35 | RA2 | a)..e) | 1º |
+| UD3 | Investiga incidentes de ciberseguridad | 30 | RA3 | a)..e) |  2º |
+| UD4 | Implementa medidas de ciberseguridad en redes y sistemas  | 35 | RA4 | a)..f) | 2º |
+| UD5 | Documenta y notifica incidentes de ciberseguridad | 20 | RA5 | a)..e) | 2º |
 
 ### Tratamiento de temas transversales
 
@@ -479,7 +479,8 @@ Los temas transversales \-no específicos de la materia- y su tratamiento, está
 * Creación de empleo.  
 * Educación para la paz y la convivencia.  
 * Educación para la ciudadanía.  
-* Manejo de documentación técnica en inglés.
+* Manejo de documentación técnica en irrors fixed
+rv3@slimbnglés.
 
 ### Interdisciplinaridad
 
@@ -606,14 +607,14 @@ La concreción de los mismos y su secuenciación de aprendizaje se han realizado
 
 ### Selección y secuencia de contenidos
 
-| Unidades didácticas |  | Sesiones | RA | Criterios |  |
+| Unidades didácticas |  | Sesiones | RA | Criterios | Timestre |
 | :---: | :---- | :---: | :---: | :---: | ----- |
-| UD1 | Zero Trust | 20 | RA4, RA6 | 6a), 6b), 6c), 6d), 6e), 4a), 4b), 4c) | 1er  trimestre (60 horas) |
-| UD2 | Least-Privilege | 20 | RA2, RA3, RA4, RA7 | 2a), 2b), 2c), 2d), 2e). 3a), 4e), 7a) 7b) |  |
-| UD3 | Reduce Attack Surface | 20 | RA5 | 5b) |  |
-| UD4 | Under Control | 40 | RA3, RA4, RA5, RA7 | 3b), 3c), 3d), 3e), 4d), 5a), 5e), 7c), 7d), 7e) |  2o  trimestre (90 horas) |
-| UD5 | Risk Management | 10 | RA1 | 1a), 1b), 1c), 1d), 1e), 1f) |  |
-| UD6 | Defense in Depth | 40 | RA5 | 5c), 5d) |  |
+| UD1 | Zero Trust | 20 | RA4, RA6 | 6a), 6b), 6c), 6d), 6e), 4a), 4b), 4c) | 1º |
+| UD2 | Least-Privilege | 20 | RA2, RA3, RA4, RA7 | 2a), 2b), 2c), 2d), 2e). 3a), 4e), 7a) 7b) | 1º |
+| UD3 | Reduce Attack Surface | 20 | RA5 | 5b) | 1º |
+| UD4 | Under Control | 40 | RA3, RA4, RA5, RA7 | 3b), 3c), 3d), 3e), 4d), 5a), 5e), 7c), 7d), 7e) |  2º |
+| UD5 | Risk Management | 10 | RA1 | 1a), 1b), 1c), 1d), 1e), 1f) | 2º |
+| UD6 | Defense in Depth | 40 | RA5 | 5c), 5d) | 2º |
 
 ### Tratamiento de temas transversales
 
@@ -762,14 +763,14 @@ La concreción de los mismos y su secuenciación de aprendizaje se han realizado
 
 ### Selección y secuencia de contenidos
 
-| Unidades didácticas |  | Sesiones | RA | Criterios |  |
+| Unidades didácticas |  | Sesiones | RA | Criterios | Trimestre |
 | :---: | :---- | :---: | :---: | :---: | :---: |
-| UT1 | Fundamentos del Software | 16 | RA1 | a, b, c, d, e | 1er  trimestre (48 horas) |
-| UT2 | Verificación  de seguridad en las aplicaciones | 15 | RA 2 | a, b, c, d |  |
-|  UT4 | Detección y corrección vulnerabilidades | 30      | RA3 | a, b, c, d, e, f, g |  |
-|  |  |  |  |  |  2o  trimestre (72 horas) |
-| UT3 | Desplegado de software seguro | 44 | RA5 | a, b, c, d, e |  |
-| UT5 | Seguridad en aplicaciones móviles | 15 | RA4 | a, b, c, d, e |  |
+| UT1 | Fundamentos del Software | 16 | RA1 | a, b, c, d, e | 1º |
+| UT2 | Verificación  de seguridad en las aplicaciones | 15 | RA 2 | a, b, c, d | 1º |
+|  UT4 | Detección y corrección vulnerabilidades | 30      | RA3 | a, b, c, d, e, f, g | 2º |
+|  |  |  |  |  |  2º |
+| UT3 | Desplegado de software seguro | 44 | RA5 | a, b, c, d, e | 2º |
+| UT5 | Seguridad en aplicaciones móviles | 15 | RA4 | a, b, c, d, e | 2º |
 
 ### Tratamiento de temas transversales
 
@@ -898,16 +899,16 @@ Para una mejor compresión de contenido global, dividiremos el módulo en 9 bloq
 
 ### Selección y secuencia de contenidos
 
-| Unidades didácticas |  | Sesiones | RA | Criterios |  |
+| Unidades didácticas |  | Sesiones | RA | Criterios | Trimestre |
 | :---: | :---- | :---: | :---: | :---: | :---: |
-| UD1 | Evidence Acquisition and Preservation | 12 | 1 | a, b, c | 1er  trimestre (48 horas) |
-| UD2 | Windows Forensics | 32 | 1 | d, e |  |
-| UD3 | Documentation and Reporting | 4 | 5 | a, b, c, d, e, f |  |
-| UD4 | Memory Forensics | 12 | 1 | g | 2o  trimestre (72 horas) |
-| UD5 | Linux Forensics | 20 | 1 | f |  |
-| UD6 | Cloud Forensics | 8 | 3 | a, b, c, d, e, f |  |
-| UD7 | Mobile Device Forensics | 16 | 2 | a, b, c, d |  |
-| UD8 | IoT Forensics | 16 | 4 | a, b, c, d, e, f, g, h, i |  |
+| UD1 | Evidence Acquisition and Preservation | 12 | 1 | a, b, c | 1º |
+| UD2 | Windows Forensics | 32 | 1 | d, e | 1º |
+| UD3 | Documentation and Reporting | 4 | 5 | a, b, c, d, e, f | 1º |
+| UD4 | Memory Forensics | 12 | 1 | g | 2º |
+| UD5 | Linux Forensics | 20 | 1 | f | 2º |
+| UD6 | Cloud Forensics | 8 | 3 | a, b, c, d, e, f | 2º |
+| UD7 | Mobile Device Forensics | 16 | 2 | a, b, c, d | 2º |
+| UD8 | IoT Forensics | 16 | 4 | a, b, c, d, e, f, g, h, i | 2º |
 
 ### Tratamiento de temas transversales
 
@@ -1040,14 +1041,14 @@ Para una mejor compresión de contenido global, dividiremos el módulo en 9 bloq
 
 ### Selección y secuencia de contenidos
 
-| Unidades didácticas |  | Sesiones | RA | Criterios |  |
+| Unidades didácticas |  | Sesiones | RA | Criterios | Trimestre |
 | :---: | :---- | :---: | :---: | ----- | :---: |
-| UD1 | Cybersecurity Audit Fundamentals | 12 | 1 | a), b), c), d), e), f), g), h), i) | 1er  trimestre (48 horas) |
-| UD2 | Web app penetration testing | 36 | 5 | a), b), c), d), e), f) |  |
-| UD3 | Host & Network Penetration Testing | 40 | 3 | a), b), c), d), e) |  2o  trimestre (72 horas) |
-| UD4 | Post Exploitation | 20 | 4 | a), b), c), d) |  |
-| UD5 | Reporting | 4 | 2 | g) |  |
-| UD6 | Wi-Fi Security and Pentesting | 8 | 2 | a), b), c), d), e), f) |  |
+| UD1 | Cybersecurity Audit Fundamentals | 12 | 1 | a), b), c), d), e), f), g), h), i) | 1º |
+| UD2 | Web app penetration testing | 36 | 5 | a), b), c), d), e), f) | 1º |
+| UD3 | Host & Network Penetration Testing | 40 | 3 | a), b), c), d), e) |  2º |
+| UD4 | Post Exploitation | 20 | 4 | a), b), c), d) | 2º |
+| UD5 | Reporting | 4 | 2 | g) | 2º |
+| UD6 | Wi-Fi Security and Pentesting | 8 | 2 | a), b), c), d), e), f) | 2º |
 
 ### Tratamiento de temas transversales
 
@@ -1285,7 +1286,7 @@ Todas las referencias usadas, se encuentran disponibles en la extensión virtual
 
 | Responsable | Acción (Redactado, Revisado) | Fecha | Versión |
 | ----- | ----- | ----- | ----- |
-| Carmona Martos, Alejandro Fenández Oliver, Eduardo Rivas Sánchez, Manuel Romero Santos, David  | Redactado | 28/10/2022 | 1.0 |
-| Carmona Martos, Alejandro Fenández Oliver, Eduardo Rivas Sánchez, Manuel Romero Santos, David | Revisado |  | 1.1 |
-| Fenández Oliver, Eduardo Rivas Sánchez, Manuel Romero Santos, David Ureña Lara, Fernando | Revisado | 06/11/2023 | 1.2 |
-| Fenández Oliver, Eduardo Ortega Nogueras, Francisco Javier Rivas Sánchez, Manuel Romero Santos, David | Revisado |  | 1.3 |
+| Carmona Martos, Alejandro<br> Fenández Oliver, Eduardo<br> Rivas Sández, Manuel<br> Romero Santos, David  | Redactado | 28/10/2022 | 1.0 |
+| Carmona Martos, Alejandro<br> Fenández Oliver, Eduardo<br> Rivas Sández, Manuel<br> Romero Santos, David | Revisado |  | 1.1 |
+| Fenández Oliver, Eduardo<br> Rivas Sández, Manuel<br> Romero Santos, David<br> Ureña Lara, Fernando | Revisado | 06/11/2023 | 1.2 |
+| Fenández Oliver, Eduardo<br> Ortega Nogueras, Francisco Javier<br> Rivas Sández, Manuel<br> Romero Santos, David | Revisado | 31/10/2024 | 2 |

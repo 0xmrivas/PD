@@ -1,0 +1,3341 @@
+<html><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="file:///media/rv3/Almacenamiento/Documentos/0%20-%20Github%20Repos/Otros/PD%20Repos/PD_personal/mkdocs-pd/site/assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.34" name="generator"/>
+<title>Home - Programación Didáctica del CE en Ciberseguridad</title>
+<link href="file:///media/rv3/Almacenamiento/Documentos/0%20-%20Github%20Repos/Otros/PD%20Repos/PD_personal/mkdocs-pd/site/assets/stylesheets/main.35f28582.min.css" rel="stylesheet"/>
+<link href="file:///media/rv3/Almacenamiento/Documentos/0%20-%20Github%20Repos/Otros/PD%20Repos/PD_personal/mkdocs-pd/site/assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<style>@charset "UTF-8";
+:root {
+  string-set: author 'Equipo educativo de ciberseguridad del IES Rafael Alberti', copyright 'CC BY-SA 4.0', title 'Programación Didáctica'; }
+
+h1, h2, h3 {
+  string-set: chapter content(); }
+@page {
+  size: a4 portrait;
+  margin: 25mm 10mm 25mm 10mm;
+  counter-increment: page;
+  white-space: pre;
+  color: grey;
+  @top-right {
+    font-size: 7pt;
+    content: string(chapter); }
+  @bottom-center {
+    font-size: 8pt;
+    content: "- " counter(page) "/" counter(pages) " -"; }
+  @bottom-right {
+    font-size: 6pt;
+    content: string(copyright); } }
+
+@media print {
+  body {
+    background: none;
+    background-color: #fff; } }
+
+article,
+section + section {
+  page-break-before: always;
+  min-height: 100vh;
+  /* Defining all page breaks */ }
+  article,
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article h6,
+  article div.tabbed-content--wrap > .tabbed-content,
+  section + section,
+  section + section h1,
+  section + section h2,
+  section + section h3,
+  section + section h4,
+  section + section h5,
+  section + section h6,
+  section + section div.tabbed-content--wrap > .tabbed-content {
+    clear: both; }
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article h6,
+  article img,
+  section + section h1,
+  section + section h2,
+  section + section h3,
+  section + section h4,
+  section + section h5,
+  section + section h6,
+  section + section img {
+    page-break-after: avoid;
+    page-break-inside: avoid; }
+  article a,
+  article blockquote,
+  article table,
+  article ul,
+  article ol,
+  section + section a,
+  section + section blockquote,
+  section + section table,
+  section + section ul,
+  section + section ol {
+    page-break-before: avoid;
+    page-break-inside: avoid; }
+  article pre,
+  article dt + dd,
+  section + section pre,
+  section + section dt + dd {
+    page-break-before: avoid; }
+  article h1 + ul,
+  article h2 + ul,
+  article h3 + ul,
+  article h4 + ul,
+  article h5 + ul,
+  article h6 + ul,
+  article h1 + ol,
+  article h2 + ol,
+  article h3 + ol,
+  article h4 + ol,
+  article h5 + ol,
+  article h6 + ol,
+  section + section h1 + ul,
+  section + section h2 + ul,
+  section + section h3 + ul,
+  section + section h4 + ul,
+  section + section h5 + ul,
+  section + section h6 + ul,
+  section + section h1 + ol,
+  section + section h2 + ol,
+  section + section h3 + ol,
+  section + section h4 + ol,
+  section + section h5 + ol,
+  section + section h6 + ol {
+    page-break-inside: auto; }
+  article div.admonition,
+  section + section div.admonition {
+    page-break-inside: avoid; }
+  article div.tabbed-content--wrap,
+  section + section div.tabbed-content--wrap {
+    page-break-inside: avoid; }
+  article * + div.highlight,
+  article * + div.tabbed-set,
+  section + section * + div.highlight,
+  section + section * + div.tabbed-set {
+    page-break-before: avoid; }
+
+section.two-columns {
+  columns: 2;
+  column-gap: 1cm; }
+
+article h1 {
+  border-bottom: 2px solid #f00; }
+
+article h2 {
+  border-bottom: 1px solid #f99; }
+
+article h3 {
+  border-bottom: 0.5px solid #eee; }
+
+article h1 > .pdf-order,
+article h2 > .pdf-order,
+article h3 > .pdf-order {
+  padding-left: 6px; }
+
+article#doc-toc {
+  margin: 0 .8rem 1.2rem;
+  padding-top: .6rem;
+  font-size: 12pt;
+  line-height: 1.6; }
+  article#doc-toc > h1 {
+    margin: 0 0 2rem;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: -.01em;
+    page-break-after: auto;
+    page-break-inside: auto;
+    bookmark-level: none; }
+    article#doc-toc > h1::before {
+      display: block;
+      margin-top: -9px;
+      padding-top: 9px;
+      content: ""; }
+  article#doc-toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 1em;
+    font-size: 8pt;
+    page-break-inside: auto !important; }
+  article#doc-toc li {
+    list-style: none; }
+    article#doc-toc li > a {
+      color: inherit;
+      text-decoration: none;
+      padding-top: 0.4rem;
+      border-bottom: 1px dotted #ddd;
+      display: inline-block;
+      width: 100%; }
+      article#doc-toc li > a > .pdf-order {
+        padding-right: 0.5em; }
+      article#doc-toc li > a::after {
+        float: right;
+        content: target-counter(attr(href), page); }
+
+@media print {
+  html {
+    font-size: 95%;
+    font-family: 'Kelmscott Roman NF', 'Noto Serif JP', serif; }
+  body {
+    font-size: 10.5pt;
+    font-family: 'Classico URW T OT', 'Noto Serif JP', serif; }
+  article {
+    font-size: 0.8rem;
+    line-height: 1.6; }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  label {
+    font-family: 'Gentium Book Basic', 'Helvetica Neue', Helvetica, Arial, 'Noto Sans JP', 'Roboto', sans-serif; }
+  pre,
+  code,
+  var,
+  samp,
+  kbd,
+  tt {
+    font-family: 'Noto Sans Mono CJK JP', 'Courier New', monospace, serif;
+    font-size: 0.8em; }
+  pre code,
+  pre var,
+  pre samp,
+  pre kbd,
+  pre tt {
+    font-size: 100%; } }
+@page :first {
+  @top-right {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-right {
+    content: normal; } }
+
+article#doc-cover {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; }
+  article#doc-cover > .wrapper {
+    flex: 1 0 auto;
+    text-align: center;
+    padding: 0 3rem; }
+    article#doc-cover > .wrapper.upper {
+      flex: 1 1 auto;
+      max-height: 30vh; }
+      article#doc-cover > .wrapper.upper > .logo {
+        width: 100%;
+        height: 100%;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: contain; }
+    article#doc-cover > .wrapper h1 {
+      font-size: 36pt;
+      line-height: 1.4; }
+    article#doc-cover > .wrapper h2 {
+      border: none;
+      bookmark-level: none; }
+  article#doc-cover > .properties {
+    flex: 0 0 auto;
+    text-align: right;
+    padding: 0 2rem; }
+    article#doc-cover > .properties p#copyright {
+      font-size: 80%; }
+
+article#doc-back_cover {
+  page: back_cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  article#doc-back_cover .wrapper {
+    flex: 1 0 auto;
+    display: inline-block;
+    background: #eee; }
+  article#doc-back_cover .qrcode {
+    display: inline-block;
+    flex: 0 0 auto;
+    background: #eee; }
+    article#doc-back_cover .qrcode > a {
+      display: inline-block;
+      padding: 0.5em 2em;
+      border-radius: 1em;
+      background-color: #fff; }
+      article#doc-back_cover .qrcode > a img {
+        width: 100%;
+        height: auto; }
+
+@page back_cover {
+  background-color: #eee;
+  @top-right {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    font-size: 8pt;
+    content: string(title); }
+  @bottom-right {
+    font-size: 8pt;
+    content: string(copyright); } }
+</style><style>@media print {
+  .md-typeset .tabbed-set {
+    display: block; }
+    .md-typeset .tabbed-set .tabbed-content--wrap {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 0.25rem; }
+      .md-typeset .tabbed-set .tabbed-content--wrap > input {
+        display: none; }
+      .md-typeset .tabbed-set .tabbed-content--wrap > label {
+        background-color: rgba(170, 170, 170, 0.2);
+        padding: 0.2rem 2rem;
+        margin: 0;
+        font-weight: 600;
+        color: #666;
+        border-radius: 3px 3px 0 0;
+        border-bottom-color: transparent; }
+      .md-typeset .tabbed-set .tabbed-content--wrap > .tabbed-content {
+        display: block;
+        box-shadow: none; }
+  .md-typeset .admonition-title + .tabbed-set:last-child,
+  .md-typeset summary + .tabbed-set:last-child {
+    margin-top: 0.5rem; }
+  .md-typeset > details summary::after {
+    display: none; }
+  .md-typeset > div, .md-typeset > div.admonition, .md-typeset > details, .md-typeset > div.tabbed-set, .md-typeset > blockquote, .md-typeset > mark, .md-typeset > table, .md-typeset > p {
+    margin-left: 0.7rem; }
+  .md-typeset > table.highlighttable {
+    margin: 0 0 0 0.7rem; }
+  .md-typeset table.highlighttable,
+  .md-typeset table.highlighttable > tbody {
+    width: 100%; }
+  .md-typeset table.highlighttable {
+    padding-bottom: 0.5em; }
+    .md-typeset table.highlighttable .linenos {
+      padding-bottom: 0; }
+  .md-typeset > ul {
+    margin-left: 1.5rem; }
+  .md-typeset h4,
+  .md-typeset h5,
+  .md-typeset h6 {
+    margin-left: 0.25rem; }
+  .md-typeset *:not(h3) + h4 {
+    margin-top: 1.5rem; }
+  .md-typeset hr {
+    border-bottom: 1px dotted #999; }
+  .md-typeset .footnote {
+    line-height: 1.1; }
+  .md-typeset table:not([class]) th, .md-typeset table:not([class]) td {
+    padding: 0.5em 1.25rem 0.4em; }
+  .md-typeset table:not([class]) td {
+    border-bottom: 1px solid #eee; }
+  .md-typeset span.twemoji {
+    vertical-align: middle;
+    height: 1.125rem;
+    display: inline-block; }
+    .md-typeset span.twemoji > img {
+      height: 1.125rem;
+      vertical-align: middle;
+      display: inline-block; } }
+.md-typeset kbd {
+  vertical-align: middle;
+  border-color: #b8b8b8;
+  border-style: outset;
+  border-width: .05rem .075rem .1rem .075rem;
+  border-radius: .25rem;
+  box-shadow: none; }
+
+:root {
+  --print-md-admonition-icon--note: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23448aff"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>');
+  --print-md-admonition-icon--abstract: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300b0ff"><path d="M4 5h16v2H4V5m0 4h16v2H4V9m0 4h16v2H4v-2m0 4h10v2H4v-2z"/></svg>');
+  --print-md-admonition-icon--info: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300b8d4"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z"/></svg>');
+  --print-md-admonition-icon--tip: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300bfa5"><path d="M17.66 11.2c-.23-.3-.51-.56-.77-.82-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32-2.59 2.08-3.61 5.75-2.39 8.9.04.1.08.2.08.33 0 .22-.15.42-.35.5-.23.1-.47.04-.66-.12a.58.58 0 01-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5.14.6.41 1.2.71 1.73 1.08 1.73 2.95 2.97 4.96 3.22 2.14.27 4.43-.12 6.07-1.6 1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6-1.12.4-2.24-.16-2.9-.82 1.19-.28 1.9-1.16 2.11-2.05.17-.8-.15-1.46-.28-2.23-.12-.74-.1-1.37.17-2.06.19.38.39.76.63 1.06.77 1 1.98 1.44 2.24 2.8.04.14.06.28.06.43.03.82-.33 1.72-.93 2.27z"/></svg>');
+  --print-md-admonition-icon--success: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300c853"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+  --print-md-admonition-icon--question: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2364dd17"><path d="M15.07 11.25l-.9.92C13.45 12.89 13 13.5 13 15h-2v-.5c0-1.11.45-2.11 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 00-2-2 2 2 0 00-2 2H8a4 4 0 014-4 4 4 0 014 4 3.2 3.2 0 01-.93 2.25M13 19h-2v-2h2M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10c0-5.53-4.5-10-10-10z"/></svg>');
+  --print-md-admonition-icon--warning: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff9100"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z"/></svg>');
+  --print-md-admonition-icon--failure: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff5252"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z"/></svg>');
+  --print-md-admonition-icon--danger: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff1744"><path d="M11.5 20l4.86-9.73H13V4l-5 9.73h3.5V20M12 2c2.75 0 5.1 1 7.05 2.95C21 6.9 22 9.25 22 12s-1 5.1-2.95 7.05C17.1 21 14.75 22 12 22s-5.1-1-7.05-2.95C3 17.1 2 14.75 2 12s1-5.1 2.95-7.05C6.9 3 9.25 2 12 2z"/></svg>');
+  --print-md-admonition-icon--bug: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23f50057"><path d="M14 12h-4v-2h4m0 6h-4v-2h4m6-6h-2.81a5.985 5.985 0 00-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 00-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8z"/></svg>');
+  --print-md-admonition-icon--example: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23651fff"><path d="M7 13v-2h14v2H7m0 6v-2h14v2H7M7 7V5h14v2H7M3 8V5H2V4h2v4H3m-1 9v-1h3v4H2v-1h2v-.5H3v-1h1V17H2m2.25-7a.75.75 0 01.75.75c0 .2-.08.39-.21.52L3.12 13H5v1H2v-.92L4 11H2v-1h2.25z"/></svg>');
+  --print-md-admonition-icon--quote: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%239e9e9e"><path d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3l-2 4z"/></svg>'); }
+
+@media print {
+  .md-typeset .admonition-title {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .admonition-title::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--note); }
+  .md-typeset .note > .admonition-title, .md-typeset .note > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .note > .admonition-title::before, .md-typeset .note > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--note); }
+  .md-typeset .abstract > .admonition-title, .md-typeset .tldr > .admonition-title, .md-typeset .summary > .admonition-title, .md-typeset .abstract > summary, .md-typeset .tldr > summary, .md-typeset .summary > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .abstract > .admonition-title::before, .md-typeset .tldr > .admonition-title::before, .md-typeset .summary > .admonition-title::before, .md-typeset .abstract > summary::before, .md-typeset .tldr > summary::before, .md-typeset .summary > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--abstract); }
+  .md-typeset .info > .admonition-title, .md-typeset .todo > .admonition-title, .md-typeset .info > summary, .md-typeset .todo > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .info > .admonition-title::before, .md-typeset .todo > .admonition-title::before, .md-typeset .info > summary::before, .md-typeset .todo > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--info); }
+  .md-typeset .tip > .admonition-title, .md-typeset .important > .admonition-title, .md-typeset .hint > .admonition-title, .md-typeset .tip > summary, .md-typeset .important > summary, .md-typeset .hint > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .tip > .admonition-title::before, .md-typeset .important > .admonition-title::before, .md-typeset .hint > .admonition-title::before, .md-typeset .tip > summary::before, .md-typeset .important > summary::before, .md-typeset .hint > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--tip); }
+  .md-typeset .success > .admonition-title, .md-typeset .done > .admonition-title, .md-typeset .check > .admonition-title, .md-typeset .success > summary, .md-typeset .done > summary, .md-typeset .check > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .success > .admonition-title::before, .md-typeset .done > .admonition-title::before, .md-typeset .check > .admonition-title::before, .md-typeset .success > summary::before, .md-typeset .done > summary::before, .md-typeset .check > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--success); }
+  .md-typeset .question > .admonition-title, .md-typeset .faq > .admonition-title, .md-typeset .help > .admonition-title, .md-typeset .question > summary, .md-typeset .faq > summary, .md-typeset .help > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .question > .admonition-title::before, .md-typeset .faq > .admonition-title::before, .md-typeset .help > .admonition-title::before, .md-typeset .question > summary::before, .md-typeset .faq > summary::before, .md-typeset .help > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--question); }
+  .md-typeset .warning > .admonition-title, .md-typeset .attention > .admonition-title, .md-typeset .caution > .admonition-title, .md-typeset .warning > summary, .md-typeset .attention > summary, .md-typeset .caution > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .warning > .admonition-title::before, .md-typeset .attention > .admonition-title::before, .md-typeset .caution > .admonition-title::before, .md-typeset .warning > summary::before, .md-typeset .attention > summary::before, .md-typeset .caution > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--warning); }
+  .md-typeset .failure > .admonition-title, .md-typeset .missing > .admonition-title, .md-typeset .fail > .admonition-title, .md-typeset .failure > summary, .md-typeset .missing > summary, .md-typeset .fail > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .failure > .admonition-title::before, .md-typeset .missing > .admonition-title::before, .md-typeset .fail > .admonition-title::before, .md-typeset .failure > summary::before, .md-typeset .missing > summary::before, .md-typeset .fail > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--failure); }
+  .md-typeset .danger > .admonition-title, .md-typeset .error > .admonition-title, .md-typeset .danger > summary, .md-typeset .error > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .danger > .admonition-title::before, .md-typeset .error > .admonition-title::before, .md-typeset .danger > summary::before, .md-typeset .error > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--danger); }
+  .md-typeset .bug > .admonition-title, .md-typeset .bug > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .bug > .admonition-title::before, .md-typeset .bug > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--bug); }
+  .md-typeset .example > .admonition-title, .md-typeset .example > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .example > .admonition-title::before, .md-typeset .example > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--example); }
+  .md-typeset .quote > .admonition-title, .md-typeset .cite > .admonition-title, .md-typeset .quote > summary, .md-typeset .cite > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .quote > .admonition-title::before, .md-typeset .cite > .admonition-title::before, .md-typeset .quote > summary::before, .md-typeset .cite > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--quote); } }
+
+:root {
+  --print-md-footnotes-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000000de"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7h-2z"/></svg>'); }
+
+@media print {
+  .md-typeset .footnote-backref::before {
+    background-color: transparent;
+    background-image: var(--print-md-footnotes-icon); } }
+
+:root {
+  --print-md-details-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="hsla(0, 0%, 0%, 0.87)"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>'); }
+
+@media print {
+  .md-typeset summary::after {
+    background-color: transparent;
+    background-image: var(--print-md-details-icon);
+    -webkit-mask-image: none;
+    mask-image: none; } }
+
+:root {
+  --print-md-tasklist-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ddd"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+  --print-md-tasklist-icon--checked: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300e676"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>'); }
+
+@media print {
+  .md-typeset .task-list-control .task-list-indicator::before {
+    background-color: transparent;
+    background-image: var(--print-md-tasklist-icon); }
+  .md-typeset .task-list-control [type=checkbox]:checked + .task-list-indicator::before {
+    background-color: transparent;
+    background-image: var(--print-md-tasklist-icon--checked); } }
+
+/*# sourceMappingURL=material-polyfills.css.map*/
+</style></head><body><article id="doc-cover">
+<p class="cover-year">Curso 2024 / 2025</p>
+<div class="cover-title">
+<h1>Programación Didáctica</h1>
+<h2>Curso de especialización en ciberffffffffffffffffffffff ffffffffffffffffff berffffffffffffffffffffff</h2>
+</div>
+</article>
+<div class="cover-department">
+<p>---------------------------------------------</p>
+<p id="department">Departamento de informática</p>
+<p id="institution">IES Rafael Alberti, Cádiz</p>
+</div>
+<style>
+@page :first {
+    size: A4;
+    margin: 2cm 2cm 11cm 1cm;
+    background-image: url('file:///media/rv3/Almacenamiento/Documentos/0 - Github Repos/Otros/PD Repos/PD_personal/mkdocs-pd/docs/templates/assets/portada-ies-rafael-alberti.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+@page {
+    size: A4;
+    margin: 2.54cm; /* Aplica margen de 2.54cm a todo el documento */
+    font-family: 'Source Sans Pro', sans-serif;
+    color:black;
+}
+
+#doc-cover {
+    display: flex;
+    flex-direction: column;
+    height: 16.7cm; /* Altura total de la página */
+    color: white !important;
+    overflow: hidden; /* Previene desbordamiento */
+}
+
+.cover-year {
+    flex: 0 0 2cm;
+    background-color: #E93456  !important;
+    text-align: right;
+    font-size: 11pt;
+    margin: 0cm;
+    color: white !important;
+}
+
+.cover-title {
+    flex: 0 0 18cm; /* Permite que crezca y ocupe el espacio disponible */
+    max-height: 18cm;
+    background-color: #E93456  !important;
+    align-items: flex-start;
+    text-align: left !important;
+    padding: 1cm;
+    margin: 0cm;
+    color: white !important;
+
+    h1 {
+        padding-top: 4cm;
+        font-size: 36pt;
+        border-bottom: none !important; 
+        margin-bottom: 0.4cm; /* Reduce la separación inferior de h1 */
+    }
+    h2 {
+        border-bottom: none !important; 
+        font-size: 16pt;
+        margin-top: 0; /* Elimina el margen superior de h2 */
+    }
+}
+
+.cover-department {
+    text-align: left !important;
+    position: absolute;
+    bottom: -10cm; /* Ajusta la distancia desde el borde inferior */
+    left: 0cm;    
+    background-color: #E93456  !important;
+    color: white !important;
+    max-width: 70%;
+    padding: 1cm;
+    overflow-y: auto; /* Permite scroll si el contenido es muy largo */
+}
+
+/* El resto de tus estilos permanecen igual */
+article .cover-title h1 h2 {
+    border-bottom: none; 
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('assets/fonts/SourceSans3-Regular.ttf.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('assets/fonts/SourceSans3-Bold.ttf.woff') format('woff');
+    font-weight: bold; /* O ajusta según sea necesario */
+    font-style: italic; /* Cambia a normal si no deseas itálico */
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
+    text-align: justify;
+}
+
+table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+
+  tr {
+    &:nth-child(even) {
+      background-color: #FFE5EA;
+    }
+  }
+
+  th {
+    background-color: #E93456 !important;
+    color: white !important;
+    font-weight: bold !important;
+    padding: 10px !important;
+    text-transform: uppercase;
+  }
+
+  th, td {
+    vertical-align: middle !important;
+    text-align: left !important;
+    padding: 10px !important;
+    height: 100% !important;
+  }
+}
+
+
+</style><article id="doc-toc"><h1>Índice</h1><ul><li><a href="#PD/:introduccion"><span class="pdf-order">1. </span>Introducción</a><ul><li><a href="#PD/:justificacion-del-curso"><span class="pdf-order">1.1 </span>Justificación del curso</a></li><li><a href="#PD/:situacion-del-curriculo"><span class="pdf-order">1.2 </span>Situación del currículo</a></li><li><a href="#PD/:justificacion-del-curriculo"><span class="pdf-order">1.3 </span>Justificación del currículo</a></li></ul></li><li><a href="#PD/:marco-legal"><span class="pdf-order">2. </span>Marco legal</a><ul><li><a href="#PD/:leyes-organicas"><span class="pdf-order">2.1 </span>Leyes Orgánicas</a></li><li><a href="#PD/:leyes-de-andalucia"><span class="pdf-order">2.2 </span>Leyes de Andalucía</a></li><li><a href="#PD/:calendario-de-implantacion"><span class="pdf-order">2.3 </span>Calendario de implantación</a></li><li><a href="#PD/:requisitos-de-centros"><span class="pdf-order">2.4 </span>Requisitos de centros</a></li><li><a href="#PD/:desarrollo-curricular-de-la-materia"><span class="pdf-order">2.5 </span>Desarrollo curricular de la materia</a></li><li><a href="#PD/:organizacion-y-funcionamiento-de-los-centros"><span class="pdf-order">2.6 </span>Organización y funcionamiento de los centros</a></li><li><a href="#PD/:contextualizacion"><span class="pdf-order">2.7 </span>Contextualización</a></li><li><a href="#PD/:regulacion-y-evaluacion"><span class="pdf-order">2.8 </span>Regulación y evaluación</a></li><li><a href="#PD/:calendario-escolar"><span class="pdf-order">2.9 </span>Calendario escolar</a></li></ul></li><li><a href="#PD/:contexto-del-centro-educativo"><span class="pdf-order">3. </span>Contexto del centro educativo</a><ul><li><a href="#PD/:caracteristicas-del-grupo"><span class="pdf-order">3.1 </span>Características del grupo</a></li></ul></li><li><a href="#PD/:objetivos"><span class="pdf-order">4. </span>Objetivos</a><ul><li><a href="#PD/:objetivos-generales-del-curso-de-especializacion"><span class="pdf-order">4.1 </span>Objetivos generales del curso de especialización</a></li><li><a href="#PD/:competencias-profesionales-personales-y-sociales"><span class="pdf-order">4.2 </span>Competencias profesionales, personales y sociales</a></li></ul></li><li><a href="#PD/:metodologia"><span class="pdf-order">5. </span>Metodología</a><ul><li><a href="#PD/:principios-metodologicos"><span class="pdf-order">5.1 </span>Principios metodológicos</a></li><li><a href="#PD/:aspectos-organizativos"><span class="pdf-order">5.2 </span>Aspectos organizativos</a></li><li><a href="#PD/:desarrollo-de-las-unidades-didacticas"><span class="pdf-order">5.3 </span>Desarrollo de las unidades didácticas</a></li><li><a href="#PD/:materiales-y-recursos-didacticos"><span class="pdf-order">5.4 </span>Materiales y recursos didácticos</a></li><li><a href="#PD/:actividades-complementarias-y-extraescolares"><span class="pdf-order">5.5 </span>Actividades complementarias y extraescolares</a></li><li><a href="#PD/:fomento-de-la-lectura"><span class="pdf-order">5.6 </span>Fomento de la lectura</a></li></ul></li><li><a href="#PD/:medidas-de-atencion-a-la-diversidad"><span class="pdf-order">6. </span>Medidas de atención a la diversidad</a><ul><li><a href="#PD/:atencion-a-la-diversidad"><span class="pdf-order">6.1 </span>Atención a la diversidad</a></li><li><a href="#PD/:adaptaciones-de-acceso"><span class="pdf-order">6.2 </span>Adaptaciones de acceso</a></li></ul></li><li><a href="#PD/:evaluacion"><span class="pdf-order">7. </span>Evaluación</a><ul><li><a href="#PD/:instrumentos-de-evaluacion"><span class="pdf-order">7.1 </span>Instrumentos de evaluación</a></li><li><a href="#PD/:calificacion"><span class="pdf-order">7.2 </span>Calificación</a></li></ul></li><li><a href="#PD/:evaluacion-y-seguimiento-de-la-programacion"><span class="pdf-order">8. </span>Evaluación y seguimiento de la programación</a><ul><li><a href="#PD/:evaluacion-del-proceso-de-ensenanza"><span class="pdf-order">8.1 </span>Evaluación del proceso de enseñanza</a></li></ul></li><li><a href="#PD/:modulos-profesionales"><span class="pdf-order">9. </span>Módulos profesionales</a></li><li><a href="#PD/:modulo-profesional-incidentes-de-ciberseguridad-5021"><span class="pdf-order">10. </span>Módulo Profesional. Incidentes de ciberseguridad (5021)</a><ul><li><a href="#PD/:resultados-de-aprendizaje"><span class="pdf-order">10.1 </span>Resultados de aprendizaje</a></li><li><a href="#PD/:contenidos"><span class="pdf-order">10.2 </span>Contenidos</a></li><li><a href="#PD/:evaluacion_1"><span class="pdf-order">10.3 </span>Evaluación</a></li><li><a href="#PD/:bibliografia-y-referencias"><span class="pdf-order">10.4 </span>Bibliografía y referencias</a></li></ul></li><li><a href="#PD/:modulo-profesional-bastionado-de-redes-y-sistemas-5022"><span class="pdf-order">11. </span>Módulo Profesional. Bastionado de redes y sistemas  (5022)</a><ul><li><a href="#PD/:resultados-de-aprendizaje_1"><span class="pdf-order">11.1 </span>Resultados de aprendizaje</a></li><li><a href="#PD/:contenidos_1"><span class="pdf-order">11.2 </span>Contenidos</a></li><li><a href="#PD/:evaluacion_2"><span class="pdf-order">11.3 </span>Evaluación</a></li><li><a href="#PD/:bibliografia-y-referencias_1"><span class="pdf-order">11.4 </span>Bibliografía y referencias</a></li></ul></li><li><a href="#PD/:modulo-profesional-puesta-en-produccion-segura-5023"><span class="pdf-order">12. </span>Módulo Profesional. Puesta en producción segura  (5023)</a><ul><li><a href="#PD/:resultados-de-aprendizajes"><span class="pdf-order">12.1 </span>Resultados de aprendizajes</a></li><li><a href="#PD/:contenidos_2"><span class="pdf-order">12.2 </span>Contenidos</a></li><li><a href="#PD/:evaluacion_3"><span class="pdf-order">12.3 </span>Evaluación</a></li><li><a href="#PD/:bibliografia-y-referencias_2"><span class="pdf-order">12.4 </span>Bibliografía y referencias</a></li></ul></li><li><a href="#PD/:modulo-profesional-analisis-forense-informatico-5024"><span class="pdf-order">13. </span>Módulo Profesional. Análisis forense informático  (5024)</a><ul><li><a href="#PD/:resultados-de-aprendizaje_2"><span class="pdf-order">13.1 </span>Resultados de aprendizaje</a></li><li><a href="#PD/:contenidos_3"><span class="pdf-order">13.2 </span>Contenidos</a></li><li><a href="#PD/:evaluacion_4"><span class="pdf-order">13.3 </span>Evaluación</a></li><li><a href="#PD/:bibliografia-y-referencias_3"><span class="pdf-order">13.4 </span>Bibliografía y referencias</a></li></ul></li><li><a href="#PD/:modulo-profesional-hacking-etico-5025"><span class="pdf-order">14. </span>Módulo Profesional. Hacking ético  (5025)</a><ul><li><a href="#PD/:resultados-de-aprendizaje_3"><span class="pdf-order">14.1 </span>Resultados de aprendizaje</a></li><li><a href="#PD/:contenidos_4"><span class="pdf-order">14.2 </span>Contenidos</a></li><li><a href="#PD/:evaluacion_5"><span class="pdf-order">14.3 </span>Evaluación</a></li><li><a href="#PD/:bibliografia-y-referencias_4"><span class="pdf-order">14.4 </span>Bibliografía y referencias</a></li></ul></li><li><a href="#PD/:modulo-profesional-normativa-de-ciberseguridad-5026"><span class="pdf-order">15. </span>Módulo Profesional. Normativa de ciberseguridad (5026)</a><ul><li><a href="#PD/:resultados-de-aprendizaje_4"><span class="pdf-order">15.1 </span>Resultados de aprendizaje</a></li><li><a href="#PD/:_1"><span class="pdf-order">15.2 </span></a></li><li><a href="#PD/:contenidos_5"><span class="pdf-order">15.3 </span>Contenidos</a></li><li><a href="#PD/:evaluacion_6"><span class="pdf-order">15.4 </span>Evaluación</a></li><li><a href="#PD/:bibliografia-y-referencias_5"><span class="pdf-order">15.5 </span>Bibliografía y referencias</a></li></ul></li><li><a href="#PD/:registro-de-versiones"><span class="pdf-order">16. </span>Registro de versiones</a></li></ul></article><article class="md-content__inner md-typeset" data-url="/PD/" id="PD/:">
+<h1 id="PD/:introduccion"><span class="pdf-order">1. </span>Introducción</h1>
+<h2 id="PD/:justificacion-del-curso"><span class="pdf-order">1.1 </span>Justificación del curso</h2>
+<p>La sociedad actual está inmersa en una imparable transformación tecnológica y digital que está cambiando la forma de trabajar, de vivir, de comunicarnos, de relacionarnos o de hacer negocios. Y para todo ello necesitamos estar conectados mediante todo tipo de dispositivos que, a través de Internet, intercambian datos personales o profesionales. En este escenario digital, la información se convierte en uno de los bienes más preciados y la seguridad de la información en un punto crítico.</p>
+<p>Por ello, la demanda de perfiles formados en ciberseguridad ha crecido de manera espectacular en los últimos años. El experto en ciberseguridad se ha convertido en un perfil fundamental para proteger la integridad digital de cualquier organización.</p>
+<p>La competencia general de este curso de especialización consiste en definir e implementar estrategias de seguridad en los sistemas de información realizando diagnósticos de ciberseguridad, identificando vulnerabilidades e implementando las medidas necesarias para mitigarlas aplicando la normativa vigente y estándares del sector, siguiendo los protocolos de calidad, de prevención de riesgos laborales y respeto ambiental.</p>
+<h2 id="PD/:situacion-del-curriculo"><span class="pdf-order">1.2 </span>Situación del currículo</h2>
+<p>El Curso de Especialización en Ciberseguridad en entornos de las tecnologías de la información queda identificado por los siguientes elementos:</p>
+<ul>
+<li><strong>Nivel:</strong> Formación Profesional de Grado Superior.  </li>
+<li><strong>Duración:</strong> 720 horas.  </li>
+<li><strong>Familia Profesional:</strong> Informática y Comunicaciones (únicamente a efectos de clasificación de las enseñanzas de formación profesional).  </li>
+<li><strong>Rama de conocimiento:</strong> Ingeniería y Arquitectura.  </li>
+<li><strong>Créditos ECTS:</strong> 43.</li>
+</ul>
+<p>Referente en la Clasificación Internacional Normalizada de la Educación: P-5.5.4.</p>
+<p>La referencia al sistema productivo, de este módulo profesional, se encuentra en el Real Decreto 479/2020, de 7 de abril, por el que se establece el Curso de especialización en ciberseguridad en entornos de las tecnologías de la información y se fijan los aspectos básicos del currículo.</p>
+<h2 id="PD/:justificacion-del-curriculo"><span class="pdf-order">1.3 </span>Justificación del currículo</h2>
+<p>El artículo 5 del Real Decreto 479/2020, de 7 de abril, establece las competencias profesionales, personales y sociales de este curso de especialización.</p>
+<p>“El equipo educativo responsable del desarrollo del curso de especialización elaborará de forma coordinada las programaciones didácticas para los módulos profesionales, teniendo en cuenta la adecuación de los diversos elementos curriculares a las características del entorno social y cultural del centro docente, así como a las del alumnado para alcanzar la adquisición de la competencia general y de las competencias profesionales, personales y sociales del título.”</p>
+<p>Por ello, es el Departamento de la Familia Profesional correspondiente el encargado de elaborar y aprobar dichas programaciones.</p>
+<p>Dicho esto, cabe decir que la programación es un proceso a través del cual se diseña y planifica el trabajo que el profesorado ha de desarrollar con sus alumnos. Este dará como resultado un conjunto de unidades didácticas ordenadas y secuenciadas, teniendo siempre como referente el proyecto curricular del ciclo formativo, así como la realidad laboral del sector informático. Elimina la improvisación, el azar y permite adaptarse al contexto de los alumnos. En definitiva, es una guía de qué y cuándo hay que impartir y cómo calificar a nuestros alumnos.</p>
+<p>El profesorado debe evaluar los aprendizajes de los alumnos, los procesos de enseñanza y su propia práctica docente. Igualmente evaluará el Proyecto Curricular, las programaciones didácticas de los módulos profesionales y el desarrollo real del currículo en relación a las necesidades educativas del Centro, a las características específicas de los alumnos y al entorno socio-económico, cultural y profesional, adaptando esta programación a la realidad social del entorno.</p>
+<p>Por ello, la programación debe estar en continua evolución dependiendo de los resultados del proceso de enseñanza-aprendizaje de los alumnos, no solo del curso para el que se ideó, sino también para los posteriores.</p>
+<h1 id="PD/:marco-legal"><span class="pdf-order">2. </span>Marco legal</h1>
+<h2 id="PD/:leyes-organicas"><span class="pdf-order">2.1 </span>Leyes Orgánicas</h2>
+<p>Ley Orgánica 2/2006, de 3 de mayo (BOE 106 de 4 de mayo), de Educación. <a href="https://www.boe.es/boe/dias/2013/12/10/pdfs/BOE-A-2013-12886.pdf">https://www.boe.es/boe/dias/2013/12/10/pdfs/BOE-A-2013-12886.pdf</a> de 9 de diciembre (BOE 295, de 10 de diciembre) para la Mejora de la Calidad Educativa (LOMCE).</p>
+<p>Ley Orgánica 5/2002, de 19 de junio (BOE 147, de 20 de junio), de las Cualificaciones y de la Formación Profesional.</p>
+<h2 id="PD/:leyes-de-andalucia"><span class="pdf-order">2.2 </span>Leyes de Andalucía</h2>
+<p>Ley 17/2007, de 10 de diciembre (BOJA 252 de 17 de diciembre y BOE 13 de febrero de 2008), de Educación en Andalucía.</p>
+<p>Decreto 436/2008, de 2 septiembre (BOJA 182, de 12 de septiembre), por el que se establecen las enseñanzas de la Formación Profesional inicial.</p>
+<p>Instrucciones de 25 de septiembre 2024, de la Dirección General de Formación Profesional y Educación Permanente de la Consejería de Desarrollo Educativo y Formación Profesional de la Junta de Andalucía, por las que se ordenan los grados E de Formación Profesional para el curso 2024/2025, y se establecen aspectos organizativos.</p>
+<h2 id="PD/:calendario-de-implantacion"><span class="pdf-order">2.3 </span>Calendario de implantación</h2>
+<p>Real Decreto 806/2006, de 30 de junio (BOE 167, de 14 de julio), por el que se establece el calendario de aplicación de la nueva ordenación del sistema educativo establecido por la Ley Orgánica 2/2006, de 3 de mayo, de Educación.</p>
+<h2 id="PD/:requisitos-de-centros"><span class="pdf-order">2.4 </span>Requisitos de centros</h2>
+<p>Real Decreto 132/2010, de 12 de febrero (BOE 62, de 12 de marzo), por el que se establecen los requisitos mínimos de los centros que impartan las enseñanzas del segundo ciclo de la educación infantil, la educación primaria y la educación secundaria.</p>
+<h2 id="PD/:desarrollo-curricular-de-la-materia"><span class="pdf-order">2.5 </span>Desarrollo curricular de la materia</h2>
+<p>Real Decreto 479/2020, de 7 de abril, por el que se establece el Curso de especialización en ciberseguridad en entornos de las tecnologías de la información y se fijan los aspectos básicos del currículo.</p>
+<h2 id="PD/:organizacion-y-funcionamiento-de-los-centros"><span class="pdf-order">2.6 </span>Organización y funcionamiento de los centros</h2>
+<p>Decreto 327/2010, de 13 de julio (BOJA 139, de 16 de julio), por el que se establece el Reglamento Orgánico de los IES.</p>
+<p>Orden de 20 de agosto de 2010 (BOJA 169, 30 de agosto), por la que se regula la organización y el funcionamiento de los institutos de educación secundaria, así como el horario de los centros, del alumnado y del profesorado.</p>
+<h2 id="PD/:contextualizacion"><span class="pdf-order">2.7 </span>Contextualización</h2>
+<p>Real Decreto 1147/2011, de 29 de julio, (BOE 182, de 30 de julio) por el que se establece la ordenación general de la formación profesional del sistema educativo. Deroga el Decreto 1538/2006.</p>
+<h2 id="PD/:regulacion-y-evaluacion"><span class="pdf-order">2.8 </span>Regulación y evaluación</h2>
+<p>Orden de 29 de septiembre de 2010 (BOJA 202, de 15 octubre), por la que se regula la evaluación, certificación, acreditación y titulación académica del alumnado que cursa enseñanzas de formación profesional inicial que forma parte del sistema educativo en la Comunidad Autónoma de Andalucía.</p>
+<p>Orden de 28 de septiembre de 2011 (BOJA 206, de 20 de octubre), por la que se regulan los módulos profesionales de formación en centros de trabajo y de proyecto para el alumnado matriculado en centros docentes de la Comunidad Autónoma de Andalucía. Deroga la Orden de 9 de diciembre de 1998 sobre regulación y la de 31 de julio de 2001 sobre exención de la FCT.</p>
+<p>Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas. En lo referente a la utilización de tecnologías telemáticas y audiovisuales para el proceso de seguimiento y evaluación.</p>
+<h2 id="PD/:calendario-escolar"><span class="pdf-order">2.9 </span>Calendario escolar</h2>
+<p>Decreto 301/2009, de 14 de julio, (BOJA 139, de 20 de julio de 2009) por el que se regula el calendario y la jornada escolar en los centros, a excepción de los universitarios.</p>
+<h1 id="PD/:contexto-del-centro-educativo"><span class="pdf-order">3. </span>Contexto del centro educativo</h1>
+<p>El I.E.S. Rafael Alberti está ubicado en Cádiz, con una población que gira alrededor de 122.990 habitantes. Su economía está basada principalmente en el sector del comercio, debido a la presencia de los astilleros y las actividades en la zona portuaria y la Zona Franca. Otro sector clave es el turismo, gracias a su importante patrimonio histórico, así como sus playas, fiestas locales y gastronomía.</p>
+<p>El centro oferta estudios de ESO, Bachillerato, CFGM de Gestión Administrativa, CFGS de Técnico Superior en Administración y Finanzas, CFGB de Informática de Oficina, CFGBE de Informática de Oficina, CFGM de Sistemas Microinformáticos y Redes, CFGS de Desarrollo de Aplicaciones Web, CFGS de Desarrollo de Aplicaciones Multiplataforma, y los cursos de especialización en Ciberseguridad en entornos de las tecnologías de la información, Desarrollo de Videojuegos y Realidad Virtual, e Inteligencia Artificial y Big Data.</p>
+<h2 id="PD/:caracteristicas-del-grupo"><span class="pdf-order">3.1 </span>Características del grupo</h2>
+<p>La distribución del alumnado es variada, habiendo accedido a través de los ciclos formativos de grado superior de la familia profesional de informática y comunicaciones, como ASIR, DAW y DAM, así como del ciclo formativo de grado superior de Técnico Superior en Sistemas de Telecomunicaciones e Informáticos, de la familia profesional de Electricidad y Electrónica.</p>
+<h1 id="PD/:objetivos"><span class="pdf-order">4. </span>Objetivos</h1>
+<h2 id="PD/:objetivos-generales-del-curso-de-especializacion"><span class="pdf-order">4.1 </span>Objetivos generales del curso de especialización</h2>
+<p>El Real Decreto 479/2020, de 7 de abril, fija los objetivos generales de este curso.</p>
+<p>a) Identificar los principios de la organización y normativa de protección en ciberseguridad, planificando las acciones que es preciso adoptar en el puesto de trabajo para la elaboración del plan de prevención y concienciación.</p>
+<p>b) Auditar el cumplimiento del plan de prevención y concienciación de la organización, definiendo las acciones correctoras que puedan derivarse para incluirlas en el plan de securización de la organización.</p>
+<p>c) Detectar incidentes de ciberseguridad implantando los controles, las herramientas y los mecanismos necesarios para su monitorización e identificación.</p>
+<p>d) Analizar y dar respuesta a incidentes de ciberseguridad, identificando y aplicando las medidas necesarias para su mitigación, eliminación, contención o recuperación.</p>
+<p>e) Elaborar análisis de riesgos para identificar activos, amenazas, vulnerabilidades y medidas de seguridad.</p>
+<p>f) Diseñar e implantar planes de medidas técnicas de seguridad a partir de los riesgos identificados para garantizar el nivel de seguridad requerido.</p>
+<p>g) Configurar sistemas de control de acceso, autenticación de personas y administración de credenciales para preservar la privacidad de los datos.</p>
+<p>h) Configurar la seguridad de sistemas informáticos para minimizar las probabilidades de exposición a ataques.</p>
+<p>i) Configurar dispositivos de red para cumplir con los requisitos de seguridad.</p>
+<p>j) Administrar la seguridad de sistemas informáticos en red aplicando las políticas de seguridad requeridas para garantizar la funcionalidad necesaria con el nivel de riesgo de red controlado.</p>
+<p>k) Aplicar estándares de verificación requeridos por las aplicaciones para evitar incidentes de seguridad.</p>
+<p>l) Automatizar planes de despliegue de software respetando los requisitos relativos a control de versiones, roles, permisos y otros para conseguir un desplegado seguro.</p>
+<p>m) Aplicar técnicas de investigación forense en sistemas y redes en los ámbitos del almacenamiento de la información no volátil, de los dispositivos móviles, del Cloud y de los sistemas IoT (Internet de las cosas), entre otros, para la elaboración de análisis forenses.</p>
+<p>n) Analizar informes forenses identificando los resultados de la investigación para extraer conclusiones y realizar informes.</p>
+<p>ñ) Combinar técnicas de hacking ético interno y externo para detectar vulnerabilidades que permitan eliminar y mitigar los riesgos asociados.</p>
+<p>o) Identificar el alcance de la aplicación normativa dentro de la organización, tanto internamente como en relación con terceros para definir las funciones y responsabilidades de todas las partes.</p>
+<p>p) Desarrollar manuales de información, utilizando herramientas ofimáticas y de diseño asistido por ordenador para elaborar documentación técnica y administrativa.</p>
+<p>q) Analizar y utilizar los recursos y oportunidades de aprendizaje relacionados con la evolución científica, tecnológica y organizativa del sector y las tecnologías de la información y la comunicación, para mantener el espíritu de actualización y adaptarse a nuevas situaciones laborales y personales.</p>
+<p>r) Desarrollar la creatividad y el espíritu de innovación para responder a los retos que se presentan en los procesos y en la organización del trabajo y de la vida personal.</p>
+<p>s) Evaluar situaciones de prevención de riesgos laborales y de protección ambiental, proponiendo y aplicando medidas de prevención personales y colectivas, de acuerdo con la normativa aplicable en los procesos de trabajo, para garantizar entornos seguros.</p>
+<p>t) Identificar y proponer las acciones profesionales necesarias para dar respuesta a la accesibilidad universal y al «diseño para todas las personas».</p>
+<p>u) Identificar y aplicar parámetros de calidad en los trabajos y actividades realizados en el proceso de aprendizaje, para valorar la cultura de la evaluación y de la calidad y ser capaces de supervisar y mejorar procedimientos de calidad.</p>
+<h2 id="PD/:competencias-profesionales-personales-y-sociales"><span class="pdf-order">4.2 </span>Competencias profesionales, personales y sociales</h2>
+<p>Las competencias profesionales, personales y sociales de este curso de especialización son las que se relacionan a continuación:</p>
+<p>a) Elaborar e implementar planes de prevención y concienciación en ciberseguridad en la organización, aplicando la normativa vigente.</p>
+<p>b) Detectar e investigar incidentes de ciberseguridad, documentándolos e incluyéndolos en los planes de securización de la organización.</p>
+<p>c) Diseñar planes de securización contemplando las mejores prácticas para el bastionado de sistemas y redes.</p>
+<p>d) Configurar sistemas de control de acceso y autenticación en sistemas informáticos, cumpliendo los requisitos de seguridad y minimizando las posibilidades de exposición a ataques.</p>
+<p>e) Diseñar y administrar sistemas informáticos en red y aplicar las políticas de seguridad establecidas, garantizando la funcionalidad requerida con un nivel de riesgo controlado.</p>
+<p>f) Analizar el nivel de seguridad requerido por las aplicaciones y los vectores de ataque más habituales, evitando incidentes de ciberseguridad.</p>
+<p>g) Implementar sistemas seguros de despliegue de software con la adecuada coordinación entre los desarrolladores y los responsables de la operación del software.</p>
+<p>h) Realizar análisis forenses informáticos analizando y registrando la información relevante relacionada.</p>
+<p>i) Detectar vulnerabilidades en sistemas, redes y aplicaciones, evaluando los riesgos asociados.</p>
+<p>j) Definir y aplicar procedimientos para el cumplimiento normativo en materia de ciberseguridad y de protección de datos personales, implementándolos tanto internamente como en relación con terceros.</p>
+<p>k) Elaborar documentación técnica y administrativa cumpliendo con la legislación vigente, respondiendo a los requisitos establecidos.</p>
+<p>l) Adaptarse a las nuevas situaciones laborales, manteniendo actualizados los conocimientos científicos, técnicos y tecnológicos relativos a su entorno profesional, gestionando su formación y los recursos existentes en el aprendizaje a lo largo de la vida.</p>
+<p>m) Resolver situaciones, problemas o contingencias con iniciativa y autonomía en el ámbito de su competencia, con creatividad, innovación y espíritu de mejora en el trabajo personal y en el de los miembros del equipo.</p>
+<p>n) Generar entornos seguros en el desarrollo de su trabajo y el de su equipo, supervisando y aplicando los procedimientos de prevención de riesgos laborales y ambientales, de acuerdo con lo establecido por la normativa y los objetivos de la organización.</p>
+<p>ñ) Supervisar y aplicar procedimientos de gestión de calidad, de accesibilidad universal y de «diseño para todas las personas», en las actividades profesionales incluidas en los procesos de producción o prestación de servicios.</p>
+<h1 id="PD/:metodologia"><span class="pdf-order">5. </span>Metodología</h1>
+<h2 id="PD/:principios-metodologicos"><span class="pdf-order">5.1 </span>Principios metodológicos</h2>
+<p>La metodología a emplear tomará como eje el diálogo, el debate y la confrontación de ideas e hipótesis, ya que no podemos olvidar que el aprendizaje es un proceso social y personal que cada individuo construye al relacionarse, activamente, con las personas y la cultura en las que vive. Como orientaciones metodológicas se utilizarán las siguientes:</p>
+<ul>
+<li>Partir del nivel de desarrollo del alumno/a y los conocimientos previos que posee.  </li>
+<li>Favorecer la adquisición de aprendizajes significativos y funcionales, trasladables a las situaciones de trabajo relacionadas con su Ciclo Formativo. De este modo, se crean relaciones entre los nuevos contenidos y lo que ya se sabe.  </li>
+<li>Contribuir al desarrollo de la capacidad de “aprender a aprender”, permitiendo que el alumno/a se adapte a nuevas situaciones de aprendizaje.  </li>
+<li>Crear un clima de aceptación mutua y cooperación.</li>
+</ul>
+<p>En definitiva, la metodología a utilizar será activa, participativa, creativa y reflexiva; para que el alumno/a sea protagonista de su propio aprendizaje. Además, será importante hacer ver al alumnado la funcionalidad de los contenidos, de manera que puedan utilizarlos en situaciones reales de la vida cotidiana en relación con sus intereses y motivaciones. Es por ello que en la medida de lo posible intentaremos no hacer clases magistrales salvo en casos excepcionales en los que los contenidos a explicar requieran una mayor utilización de estas.</p>
+<p>Basándonos en un aprendizaje significativo, en las unidades didácticas se ha utilizado la metodología de Tyler y Wheeler, que distingue entre varios tipos de actividades. En concreto, se utilizan los siguientes tipos de actividades:</p>
+<ul>
+<li>Actividades de evaluación de conocimientos previos.  </li>
+<li>Actividades de presentación – motivación.  </li>
+<li>Actividades de desarrollo de contenidos o explicación.  </li>
+<li>Actividades de refuerzo y ampliación.  </li>
+<li>Actividades de evaluación.  </li>
+<li>Actividades de recuperación.</li>
+</ul>
+<h2 id="PD/:aspectos-organizativos"><span class="pdf-order">5.2 </span>Aspectos organizativos</h2>
+<h3 id="PD/:trabajo-en-equipo-y-colaboracion"><span class="pdf-order">5.2.1 </span>Trabajo en equipo y colaboración</h3>
+<p>Tal y como se establece en los Objetivos de la formación Profesional, ser capaces de realizar trabajo en equipo es uno de los objetivos. Es por ello necesario para el proceso de enseñanza-aprendizaje, y conviene señalar el tipo de agrupamiento de los alumnos mediante el cual se desarrollarán dichas actividades.</p>
+<p>Los diferentes bloques de la materia permiten que se pueda trabajar tanto individualmente (resolución de actividades) como en pequeños grupos (discusión y resolución de casos prácticos) y en gran grupo.</p>
+<p>Individualmente, como actividad de aprendizaje propia de cada alumno/a, favorecemos la capacidad intelectual de aprender por sí mismo.</p>
+<ul>
+<li>Realiza actividades y tareas programadas.  </li>
+<li>Crea sus propias pautas o ritmos de aprendizaje.  </li>
+<li>Organiza sus tiempos. Es puntual en la entrega de trabajos.  </li>
+<li>Es autocrítico y tiene autoestima. Tiene iniciativa ante problemas que se le plantean.  </li>
+<li>Es perseverante y responsable.  </li>
+<li>Cuida los recursos que utiliza (instalaciones, equipos, bibliografía, etc.), evita riesgos medioambientales. Aplica las normas de seguridad e higiene en el trabajo.</li>
+</ul>
+<p>El trabajo individual nos permitirá, por tanto, desarrollar las competencias personales y profesionales programadas.</p>
+<p>En grupo, “el conocimiento que se comparte, se multiplica”. Se procurará que el alumnado logre entre sí, un buen clima de cooperación y trabajo en equipo. El desarrollo de estas actitudes en la Formación Profesional es básico para que el alumno/a en el futuro se integre fácilmente en su puesto de trabajo y pueda participar en un equipo profesional. Los trabajos en grupo nos permiten desarrollar las competencias personales y sociales del alumnado.</p>
+<p>Usaremos el agrupamiento de pequeño grupo, entre 2 y 4 componentes, y en menor medida el trabajo individualizado, tanto para los trabajos de clase, autodidacta como en casa. Esto mismo es aplicable a la realización de las prácticas obligatorias, y también cuando la actividad a desempeñar sea la de dudas, cierre o repaso.</p>
+<h2 id="PD/:desarrollo-de-las-unidades-didacticas"><span class="pdf-order">5.3 </span>Desarrollo de las unidades didácticas</h2>
+<p>El proceso que se seguirá es el siguiente:</p>
+<ul>
+<li>Presentación de la unidad, indicando los Resultados de Aprendizaje y Criterios de Evaluación asociados a la unidad.  </li>
+<li>Cada sesión comenzará con un breve resumen de los contenidos vistos en la sesión anterior, resolviendo cualquier tipo de duda que haya surgido.  </li>
+<li>A continuación se explicarán los nuevos contenidos con ayuda de diapositivas, resolución de ejercicio práctico o algún material de apoyo, como vídeos, imágenes, audios, enlaces a otros contenidos, etc.  </li>
+<li>Puesta en práctica de aquellos contenidos en actividades que se podrá comenzar en clase y seguir practicando en casa.  </li>
+<li>Al finalizar la unidad se realizarán actividades de refuerzo y ampliación para resolución de las dudas que aún les puedan surgir o ampliar los conocimientos, de forma que atendamos a la atención a la diversidad y en concreto a los diferentes ritmos de aprendizaje.</li>
+</ul>
+<h2 id="PD/:materiales-y-recursos-didacticos"><span class="pdf-order">5.4 </span>Materiales y recursos didácticos</h2>
+<p>Se utilizarán los siguientes recursos:</p>
+<ul>
+<li>Para el desarrollo de los contenidos conceptuales se emplearán textos, ejemplos y apuntes en formato digital.  </li>
+<li>Para el desarrollo de los contenidos prácticos se utilizarán los ordenadores del aula-grupo.</li>
+</ul>
+<p>En cuanto al espacio utilizado para el desarrollo de esta programación, será el aula del grupo usando los ordenadores disponibles. Será necesario el uso de Internet como complemento a las actividades.</p>
+<ul>
+<li><strong>Hardware:</strong> </li>
+<li>Televisión.  </li>
+<li>Ordenadores.  </li>
+<li>Red de área local.  </li>
+<li>Dispositivos IoT.  </li>
+<li>Raspberry Pi.  </li>
+<li>USB Rubber Ducky.  </li>
+<li>WiFi Pineapple y similares.  </li>
+<li>HackRF One.  </li>
+<li>USB Killer Pro Kit.  </li>
+<li>AirDrive Forensic Keylogger Pro.  </li>
+<li>Servidor Proxmox.  </li>
+<li><strong>Software:</strong> </li>
+<li>Sistema operativo.  </li>
+<li>Navegador.  </li>
+<li>Software de virtualización.  </li>
+<li>PNETLab.</li>
+</ul>
+<p>Se usará la plataforma educativa online Moodle Centros que proporciona la Consejería de Educación de la Junta de Andalucía, como lugar de consulta y presentación de trabajos, así como medio principal de comunicación con el alumnado.</p>
+<h2 id="PD/:actividades-complementarias-y-extraescolares"><span class="pdf-order">5.5 </span>Actividades complementarias y extraescolares</h2>
+<p>Las visitas programadas por el departamento se recogen en el plan anual del centro, y las actividades que se han programado para el presente curso lectivo se han incluido en dicho documento.</p>
+<h2 id="PD/:fomento-de-la-lectura"><span class="pdf-order">5.6 </span>Fomento de la lectura</h2>
+<p>Dada la particular naturaleza de las enseñanzas relacionadas con la informática, es frecuente que los profesionales de la informática deban leer documentación técnica en inglés, ya que o la documentación en castellano está anticuada o bien las traducciones son deficientes, y los detalles técnicos traducidos resultan con frecuencia incomprensibles, incompletos o erróneos.</p>
+<p>Por tanto, es necesario que el alumno que cursa estudios de informática se acostumbre a utilizar documentación técnica en inglés, en primer lugar para "perder el miedo" a consultar documentación en inglés u otra lengua y en segundo lugar porque es frecuente que no haya otra alternativa si se quiere tener información actualizada.<br/>
+El alumno debe evitar utilizar permanentemente traductores automáticos, no solo porque las traducciones de textos técnicos la mayoría de las veces no son comprensibles, sino porque también se pierde demasiado tiempo si cada vez que se necesite comprender algo escrito en otro idioma haya que copiar el texto al software traductor, el cual frecuentemente origina problemas relacionados con el formato del texto copiado (viñetas, etc.) que dificultan la comprensión del texto traducido. Sin contar que es posible que lo que sea necesario traducir sea un texto impreso en papel, o una conversación hablada.</p>
+<h1 id="PD/:medidas-de-atencion-a-la-diversidad"><span class="pdf-order">6. </span>Medidas de atención a la diversidad</h1>
+<p>Es un hecho indiscutible que los alumnos y alumnas son diferentes por su cultura, intereses, estilos de aprendizaje, motivaciones y tiempo que necesitan para aprender y esta necesidad, requiere diferentes grados de atención educativa.</p>
+<p>El art 5.3 del Real Decreto 1147/2011, indica que las enseñanzas de formación profesional se adaptarán al alumnado con necesidad específica de apoyo educativo para que se garantice su acceso, permanencia y progresión.</p>
+<p>En la Formación Profesional Inicial no se contemplan adaptaciones curriculares significativas, es por ello que, solo se podrán contemplar medidas no significativas de acceso al currículo. Por este motivo, la forma de atender a la diversidad desde este módulo será sobre todo metodológica.</p>
+<p>Los ajustes deben ser flexibles para atender a las dificultades, con la metodología, actividades, materiales y agrupamientos que no entorpezcan al resto del alumnado. Estas pueden ser:</p>
+<ul>
+<li>Adaptaciones de acceso, no solo movilidad sino también acceso a la información. Que pueden afectar a la metodología, recursos y métodos de evaluación, pero jamás a los contenidos, ya que la Ley lo impide.  </li>
+<li>Adaptaciones metodológicas que no afectarán a los componentes del currículo.</li>
+</ul>
+<p>El Departamento didáctico solicitará asesoramiento al Departamento de Orientación del Centro respecto al alumnado que soliciten apoyo, para en caso de no tener apoyo externo intentar asesorar a las familias y/o alumnado solicitante, con el objeto de facilitar alcanzar los objetivos fijados por el diseño curricular.</p>
+<h2 id="PD/:atencion-a-la-diversidad"><span class="pdf-order">6.1 </span>Atención a la diversidad</h2>
+<p>Se realizará un seguimiento individual del alumnado con el objeto de adecuar el proceso de enseñanza-aprendizaje a las características del mismo. Se pueden emplear los siguientes métodos:</p>
+<ul>
+<li>Planteamiento de actividades y cuestionarios para fijar el nivel de conocimientos previos.  </li>
+<li>Observación de la actitud diaria del alumnado.  </li>
+<li>Evaluación de la capacidad del educando para realizar procedimientos técnicos con el equipo y su habilidad para la resolución de los problemas.  </li>
+<li>Elaboración de trabajos que hagan uso de la capacidad creativa y de los medios y recursos del Centro.  </li>
+<li>Integración de los alumnos y alumnas con problemas en grupos de trabajo mixtos y diversos para que en ningún momento se sientan discriminados.</li>
+</ul>
+<h2 id="PD/:adaptaciones-de-acceso"><span class="pdf-order">6.2 </span>Adaptaciones de acceso</h2>
+<p>Adaptaciones de acceso al currículo, condiciones físicas del Centro y del aula y recursos materiales, dentro de las condiciones y medidas previstas por el Centro.</p>
+<p>Medidas metodológicas, curriculares y organizativas, que básicamente serán:</p>
+<ul>
+<li>
+<p>Modificación de la organización espacial: para que puedan sacar más partido de lo que se vea o se oiga en clase y garantizando su comodidad y movilidad.</p>
+</li>
+<li>
+<p>Priorización y secuenciación de contenidos (resaltando los procedimientos), con posibilidad de eliminar contenidos secundarios.</p>
+</li>
+<li>
+<p>En los agrupamientos: fomentando la integración y la ayuda entre compañeros.</p>
+</li>
+<li>
+<p>Adaptando los tiempos y ritmos de aprendizaje, a cada alumno/a.</p>
+</li>
+<li>
+<p>Variedad de recursos didácticos en función de las necesidades, uso de técnicas de estudio (con el Dpto. de Orientación) y alterando el nivel de abstracción o complejidad.</p>
+</li>
+<li>
+<p>Actividades alternativas y/o complementarias que respondan progresivamente a los diferentes ritmos de aprendizaje del alumnado del grupo:</p>
+</li>
+<li>
+<p>Las <em>actividades de refuerzo</em> se orientan a la superación de posibles dificultades de alumnos que no han alcanzado los objetivos, a través de la repetición de explicaciones y la búsqueda de ejemplos y casos prácticos.</p>
+</li>
+<li>
+<p>Las <em>actividades de ampliación</em>, se orientan a que el alumno/a que haya adquirido perfectamente los contenidos del tema, desarrolle al máximo los resultados de aprendizaje, usando todos los recursos disponibles. Consistirán en la investigación, de entre varios temas propuestos por el profesor, en la búsqueda de información y realización de trabajos.</p>
+</li>
+<li>
+<p>Empleo de variedad de técnicas e instrumentos de evaluación de los aprendizajes.</p>
+</li>
+</ul>
+<h1 id="PD/:evaluacion"><span class="pdf-order">7. </span>Evaluación</h1>
+<p>El art. 3.3 de la ORDEN de 29 de septiembre de 2010 establece que al término del proceso de enseñanza-aprendizaje, el alumnado obtendrá una calificación final para cada uno de los módulos profesionales en que esté matriculado y que para establecer dicha calificación los miembros del equipo docente considerarán el grado y nivel de adquisición de los resultados de aprendizaje establecidos para cada módulo profesional, de acuerdo con sus correspondientes criterios de evaluación.</p>
+<p>En base al artículo anterior, en el apartado 9 de esta programación, se especifican los resultados de aprendizaje asociados a cada uno de los módulos profesionales, así como la ponderación asignada a cada uno de ellos. Igualmente, se especifica el peso de cada uno de los CE, para así poder medir si se ha logrado o por el contrario se han presentado dificultades en el proceso. </p>
+<h2 id="PD/:instrumentos-de-evaluacion"><span class="pdf-order">7.1 </span>Instrumentos de evaluación</h2>
+<p>Se utilizarán los siguientes instrumentos de evaluación para comprobar el progreso y las dificultades del alumnado:</p>
+<ul>
+<li>Actividades teórico-prácticas sobre los contenidos tratados en el aula.  </li>
+<li>Proyectos aplicados.  </li>
+<li>Pruebas de aplicación teóricas y prácticas.</li>
+</ul>
+<h2 id="PD/:calificacion"><span class="pdf-order">7.2 </span>Calificación</h2>
+<p>Según establece el artículo 3, punto 3 de la ORDEN de 29 de septiembre de 2010, por la que se regula la evaluación, certificación, acreditación y titulación académica del alumnado que cursa enseñanzas de formación profesional inicial que forma parte del sistema educativo en la Comunidad Autónoma de Andalucía:</p>
+<blockquote>
+<p>“<em>Al término del proceso de enseñanza-aprendizaje, el alumnado obtendrá una calificación final para cada uno de los módulos profesionales en que esté matriculado. Para establecer dicha calificación los miembros del equipo docente considerarán el grado y nivel de adquisición de los resultados de aprendizaje establecidos para cada módulo profesional, de acuerdo con sus correspondientes criterios de evaluación y los objetivos generales relacionados, así como de la competencia general y las competencias profesionales, personales y sociales del título, establecidas en el perfil profesional del mismo y sus posibilidades de inserción en el sector profesional y de progreso en los estudios posteriores a los que pueda acceder.</em>”</p>
+</blockquote>
+<h3 id="PD/:evaluacion-inicial"><span class="pdf-order">7.2.1 </span>Evaluación inicial</h3>
+<p>Durante el primer mes del curso, se realizará una evaluación inicial sobre los contenidos del módulo profesional con la finalidad de detectar posibles problemas que podamos tener durante el curso y adaptar los contenidos al nivel del alumnado. </p>
+<p>Los resultados serán obtenidos a través de una prueba inicial en los primeros días de clase y observación directa del alumnado desde el inicio del curso hasta la evaluación.</p>
+<p>Esta evaluación no afectará a la calificación final, solo tendrá carácter informativo.</p>
+<h3 id="PD/:evaluaciones-parciales"><span class="pdf-order">7.2.2 </span>Evaluaciones parciales</h3>
+<p>A lo largo del curso tendremos dos momentos en los que se evaluará al alumnado de manera parcial: una en enero y otra en mayo.</p>
+<p>Para calcular la <strong>calificación de cada evaluación parcial</strong>, y dado que según la normativa vigente debe ser un número entero comprendido entre el 1 y el 10, se procederá de la siguiente manera:</p>
+<p>La calificación de cada evaluación parcial será la media aritmética de las calificaciones obtenidas en todos los Resultados de Aprendizaje evaluados hasta el momento. A su vez, la calificación de cada Resultado de Aprendizaje se obtendrá mediante la media aritmética de las calificaciones de los Criterios de Evaluación que lo componen.</p>
+<p>Esta calificación solo será efectiva en el caso de que el alumno haya superado todos y cada uno de los Resultados de Aprendizaje impartidos en la evaluación. En el caso de que el alumno no haya superado algún Resultado de Aprendizaje y el resultado de la anterior fórmula sea un número entero mayor o igual que 5, la calificación efectiva de la evaluación será igual a 4 hasta que el alumno supere todos los Resultados de Aprendizaje pendientes, momento en el que se realizará el recálculo de las calificaciones tal y como se indica en el apartado <strong>Evaluación Ordinaria</strong>.</p>
+<h3 id="PD/:evaluacion-final-ordinaria"><span class="pdf-order">7.2.3 </span>Evaluación final ordinaria</h3>
+<p>La calificación de la evaluación final se expresa en la escala de 1 a 10 sin decimales considerándose superado el módulo a las alumnas o alumnos que obtengan una puntuación igual o superior a 5.</p>
+<p>Para la evaluación final, la calificación será la media aritmética de todos los Resultados de Aprendizaje evaluados a lo largo del curso. La superación de un trimestre no implica la superación de los anteriores. Si el alumnado supera el segundo trimestre, pero no el primero, se considerará el curso no superado.</p>
+<h3 id="PD/:periodo-de-refuerzo-yo-recuperacion"><span class="pdf-order">7.2.4 </span>Periodo de refuerzo y/o recuperación</h3>
+<p>Al finalizar el periodo ordinario podemos encontrarnos con alumnos o alumnas que no hayan superado el módulo, por lo que contaremos con un amplio plazo para intentar dotar a los estudiantes de los Resultados de Aprendizajes del módulo para obtener una calificación positiva en la evaluación final. En este periodo se ha considerado oportuno llevar a cabo las siguientes acciones:</p>
+<ul>
+<li>Se analizarán a modo de síntesis los conceptos fundamentales.  </li>
+<li>Los alumnos y alumnas resolverán supuestos prácticos.  </li>
+<li>Posteriormente se celebrará una prueba de evaluación.</li>
+</ul>
+<p>Igualmente, podemos encontrarnos con la situación de alumnos o alumnas que han superado las dos evaluaciones parciales, no estén satisfechos con su calificación y soliciten una oportunidad de intentar mejorarlas. El docente, tal como establece la normativa, atenderá a dicha demanda y planificará actividades para tal fin:</p>
+<ul>
+<li>Se efectuarán aportaciones de situaciones más complejas de los supuestos prácticos.  </li>
+<li>Posteriormente, se presentarán a una prueba de evaluación.</li>
+</ul>
+<h3 id="PD/:reclamacion-del-alumnado"><span class="pdf-order">7.2.5 </span>Reclamación del alumnado</h3>
+<p>El alumnado tiene derecho a formular reclamaciones sobre las decisiones y calificaciones del proceso de evaluación. Así lo establece el artículo 19 de la Orden de 29 de septiembre de 2010, que concede un plazo de 2 días hábiles posteriores a la publicación o notificación de las notas para hacerla efectiva y encarga al departamento correspondiente resolver, emitiendo un informe al efecto.</p>
+<h1 id="PD/:evaluacion-y-seguimiento-de-la-programacion"><span class="pdf-order">8. </span>Evaluación y seguimiento de la programación</h1>
+<h2 id="PD/:evaluacion-del-proceso-de-ensenanza"><span class="pdf-order">8.1 </span>Evaluación del proceso de enseñanza</h2>
+<p>En este caso se pretende valorar la idoneidad de la programación didáctica y el entorno donde se pone en práctica, comparando los resultados alcanzados con los objetivos que se pretendían conseguir.</p>
+<p>También es conveniente la evaluación del profesorado como parte del proceso de enseñanza. Esto permite garantizar la calidad del mismo, pues la propia revisión del trabajo realizado por el docente, es el mejor camino para detectar los puntos débiles del proceso de enseñanza-aprendizaje, siempre para tomar las medidas oportunas que permitan reforzar esos puntos débiles con el fin de mejorar la calidad de la enseñanza impartida.</p>
+<p>La autoevaluación posibilita:</p>
+<ul>
+<li>Tener una técnica apropiada de percepción de la actuación docente.  </li>
+<li>Una ayuda para reflexionar sobre éxitos y fracasos. Para modificar la forma de enseñar y evaluar.  </li>
+<li>Un método que facilita el crecimiento y desarrollo profesional.  </li>
+<li>Una herramienta que permite identificar las necesidades de formación del docente.  </li>
+<li>Un instrumento para la evaluación del docente, por y para él.</li>
+</ul>
+<p>La evaluación del proceso de enseñanza no debe ser considerada por el profesorado como un método de inspección que detecte la competencia o no. Debe entenderse como una práctica de auto sensibilización en los valores más adecuados para la enseñanza:</p>
+<ul>
+<li>Colaboración frente a individualismo.  </li>
+<li>Autonomía frente a dependencia.  </li>
+<li>Comunicación frente al aislamiento.  </li>
+<li>Autorregulación y crítica colaborativa frente a directrices externas.</li>
+</ul>
+<p>Hemos de considerar la autoevaluación como un componente esencial dentro del proceso general de la evaluación académica. Esta se llevará a cabo fundamentalmente por la realimentación proporcionada por el propio alumnado, en forma de resultados de las prácticas, exámenes, proyectos, trabajos de investigación, etc. También por las opiniones que podamos recibir de otros compañeros del Departamento y del Equipo Directivo.</p>
+<p>Además, está previsto realizar un cuestionario que se pasará a todos los alumnos y alumnas al final del curso, para conocer la impresión que han tenido y aspectos que mejorarían o cambiarían.</p>
+<h1 id="PD/:modulos-profesionales"><span class="pdf-order">9. </span>Módulos profesionales</h1>
+<p>Los módulos profesionales de este curso de especialización quedan desarrollados en el anexo I de este real decreto, cumpliendo lo previsto en el artículo 10, apartado 3 del Real Decreto 1147/2011, de 29 de julio, por el que se establece la ordenación general de la formación profesional del sistema educativo. Son los que a continuación se relacionan:</p>
+<ul>
+<li>
+<ol>
+<li>Incidentes de ciberseguridad.</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Bastionado de redes y sistemas.</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Puesta en producción segura.</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Análisis forense informático.</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Hacking ético.</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Normativa de ciberseguridad.</li>
+</ol>
+</li>
+</ul>
+<h1 id="PD/:modulo-profesional-incidentes-de-ciberseguridad-5021"><span class="pdf-order">10. </span>Módulo Profesional. Incidentes de ciberseguridad (5021)</h1>
+<h2 id="PD/:resultados-de-aprendizaje"><span class="pdf-order">10.1 </span>Resultados de aprendizaje</h2>
+<p>El Real Decreto 479/2020, de 7 de abril, establece los siguientes Resultados de aprendizaje, que se presentan desglosados según sus elementos:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">RA</th>
+<th style="text-align: left;">LOGRO</th>
+<th style="text-align: left;">OBJETO</th>
+<th style="text-align: left;">ACCIONES EN EL CONTEXTO DE APRENDIZAJE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">RA 1</td>
+<td style="text-align: left;">Desarrolla</td>
+<td style="text-align: left;">planes de prevención y concienciación en ciberseguridad</td>
+<td style="text-align: left;">estableciendo normas y medidas de protección</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 2</td>
+<td style="text-align: left;">Analiza</td>
+<td style="text-align: left;">incidentes de ciberseguridad</td>
+<td style="text-align: left;">utilizando herramientas, mecanismos de detección y alertas de seguridad</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 3</td>
+<td style="text-align: left;">Investiga</td>
+<td style="text-align: left;">incidentes de ciberseguridad</td>
+<td style="text-align: left;">analizando los riesgos implicados y definiendo las posibles medidas a adoptar</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 4</td>
+<td style="text-align: left;">Implementa</td>
+<td style="text-align: left;">medidas de ciberseguridad en redes y sistemas</td>
+<td style="text-align: left;">respondiendo a los incidentes detectados y aplicando las técnicas de protección adecuadas</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 5</td>
+<td style="text-align: left;">Detecta y documenta</td>
+<td style="text-align: left;">incidentes de ciberseguridad</td>
+<td style="text-align: left;">siguiendo procedimientos de actuación establecidos.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="PD/:contenidos"><span class="pdf-order">10.2 </span>Contenidos</h2>
+<h3 id="PD/:contenidos-del-curriculo"><span class="pdf-order">10.2.1 </span>Contenidos del currículo</h3>
+<p>Los contenidos son el conjunto de conocimientos, habilidades, destrezas y actitudes cuya asimilación y apropiación por los que aprenden se consideran esenciales para su ejercicio profesional.</p>
+<p>La concreción de los mismos y su secuenciación de aprendizaje se han realizado atendiendo a los siguientes criterios:</p>
+<ul>
+<li>Adecuación a los contenidos básicos reflejados en la normativa estatal, el Real Decreto 479/2020, de 7 de abril.  </li>
+<li>Adecuación de los contenidos al requerido en el entorno laboral local.  </li>
+<li>Adaptación de los contenidos a los conocimientos previos del alumnado.  </li>
+<li>Continuidad y progresión en los contenidos.  </li>
+<li>Equilibrio entre las secuencias de conceptos, objetivos y capacidades.  </li>
+<li>Interrelación entre contenidos.</li>
+</ul>
+<h3 id="PD/:seleccion-y-secuencia-de-contenidos"><span class="pdf-order">10.2.2 </span>Selección y secuencia de contenidos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Unidades didácticas</th>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Sesiones</th>
+<th style="text-align: center;">RA</th>
+<th style="text-align: center;">Criterios</th>
+<th>Trimestre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">UD1</td>
+<td style="text-align: left;">Desarrollo de planes de prevención y concienciación</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">RA1</td>
+<td style="text-align: center;">a)..e)</td>
+<td>1º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD2</td>
+<td style="text-align: left;">Analiza incidentes de ciberseguridad</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">RA2</td>
+<td style="text-align: center;">a)..e)</td>
+<td>1º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD3</td>
+<td style="text-align: left;">Investiga incidentes de ciberseguridad</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">RA3</td>
+<td style="text-align: center;">a)..e)</td>
+<td>2º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD4</td>
+<td style="text-align: left;">Implementa medidas de ciberseguridad en redes y sistemas</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">RA4</td>
+<td style="text-align: center;">a)..f)</td>
+<td>2º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD5</td>
+<td style="text-align: left;">Documenta y notifica incidentes de ciberseguridad</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">RA5</td>
+<td style="text-align: center;">a)..e)</td>
+<td>2º</td>
+</tr>
+</tbody>
+</table>
+<h3 id="PD/:tratamiento-de-temas-transversales"><span class="pdf-order">10.2.3 </span>Tratamiento de temas transversales</h3>
+<p>Los temas transversales -no específicos de la materia- y su tratamiento, están vinculados a las situaciones que se presenten en las actividades propuestas, distribuidos a lo largo del módulo.</p>
+<ul>
+<li>Se considerarán los siguientes temas transversales:  </li>
+<li>Sostenibilidad medioambiental.  </li>
+<li>Educación del consumidor.  </li>
+<li>Salud laboral.  </li>
+<li>Educación para la igualdad de oportunidades entre ambos sexos.  </li>
+<li>Igualdad de oportunidades y respeto a personas de otras culturas y credos.  </li>
+<li>Inserción laboral.  </li>
+<li>Creación de empleo.  </li>
+<li>Educación para la paz y la convivencia.  </li>
+<li>Educación para la ciudadanía.  </li>
+<li>Manejo de documentación técnica en irrors fixed
+rv3@slimbnglés.</li>
+</ul>
+<h3 id="PD/:interdisciplinaridad"><span class="pdf-order">10.2.4 </span>Interdisciplinaridad</h3>
+<p>En el curso, todos los módulos se relacionan íntimamente con el presente, con cuyo profesorado debemos coordinarnos:</p>
+<ul>
+<li>5022. Bastionado de redes y sistemas.  </li>
+<li>5023. Puesta en producción segura.  </li>
+<li>5024. Análisis forense informático.  </li>
+<li>5025. Hacking ético.  </li>
+<li>5026. Normativa de ciberseguridad.</li>
+</ul>
+<h2 id="PD/:evaluacion_1"><span class="pdf-order">10.3 </span>Evaluación</h2>
+<p>A continuación, se especifica el peso de cada uno de los resultados de aprendizaje, así como el de los criterios de evaluación que lo componen. La mayor o menor ponderación de los criterios se obtiene en base al nivel de dificultad y contenidos a desarrollar para cada criterio. La calificación de cada resultado de aprendizaje será la media ponderada de los distintos criterios de evaluación.</p>
+<table>
+<thead>
+<tr>
+<th>RA</th>
+<th>Criterios de evaluación</th>
+<th style="text-align: center;">Peso RA</th>
+<th style="text-align: center;">Peso CE</th>
+<th style="text-align: center;">Técnica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA1</td>
+<td>a) Se han definido los principios generales de la organización en materia de ciberseguridad, que deben ser conocidos y apoyados por la dirección de la misma.</td>
+<td style="text-align: center;">15%</td>
+<td style="text-align: center;">6,0%</td>
+<td style="text-align: center;">Actividades teórico - prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se ha establecido una normativa de protección del puesto de trabajo.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha definido un plan de concienciación de ciberseguridad dirigido a los empleados.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se ha desarrollado el material necesario para llevar a cabo las acciones de concienciación dirigidas a los empleados.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">2,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se ha realizado una auditoría para verificar el cumplimiento del plan de prevención y concienciación de la organización.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA2</td>
+<td>a) Se ha clasificado y definido la taxonomía de incidentes de ciberseguridad que pueden afectar a la organización.</td>
+<td style="text-align: center;">25%</td>
+<td style="text-align: center;">2,0%</td>
+<td style="text-align: center;">Actividades teórico - prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han establecido controles, herramientas y mecanismos de monitorización, identificación, detección y alerta de incidentes.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">11,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se han establecido controles y mecanismos de detección e identificación de incidentes de seguridad física.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han establecido controles, herramientas y mecanismos de monitorización, identificación, detección y alerta de incidentes a través de la investigación en fuentes abiertas (OSINT: Open Source Intelligence).</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">6,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se ha realizado una clasificación, valoración, documentación y seguimiento de los incidentes detectados dentro de la organización.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA3</td>
+<td>a) Se han recopilado y almacenado de forma segura evidencias de incidentes de ciberseguridad que afectan a la organización.</td>
+<td style="text-align: center;">20%</td>
+<td style="text-align: center;">3,0%</td>
+<td style="text-align: center;">Actividades teórico - prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se ha realizado un análisis de evidencias.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha realizado la investigación de incidentes de ciberseguridad.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se ha intercambiado información de incidentes, con proveedores y/o organismos competentes que podrían hacer aportaciones al respecto.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han iniciado las primeras medidas de contención de los incidentes para limitar los posibles daños causados.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA4</td>
+<td>a) Se han desarrollado procedimientos de actuación detallados para dar respuesta, mitigar, eliminar o contener los tipos de incidentes de ciberseguridad más habituales.</td>
+<td style="text-align: center;">30%</td>
+<td style="text-align: center;">6,0%</td>
+<td style="text-align: center;">Actividades teórico - prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han preparado respuestas ciberresilientes ante incidentes que permitan seguir prestando los servicios de la organización y fortaleciendo las capacidades de identificación, detección, prevención, contención, recuperación y cooperación con terceros.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">6,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha establecido un flujo de toma de decisiones y escalado de incidentes interno y/o externo adecuados.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">6,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han llevado a cabo las tareas de restablecimiento de los servicios afectados por un incidente hasta confirmar la vuelta a la normalidad.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">6,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han documentado las acciones realizadas y las conclusiones que permitan mantener un registro de “lecciones aprendidas”.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>f) Se ha realizado un seguimiento adecuado del incidente para evitar que una situación similar se vuelva a repetir.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA5</td>
+<td>a) Se ha desarrollado un procedimiento de actuación detallado para la notificación de incidentes de ciberseguridad en los tiempos adecuados.</td>
+<td style="text-align: center;">10%</td>
+<td style="text-align: center;">6,0%</td>
+<td style="text-align: center;">Actividades teórico - prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se ha notificado el incidente de manera adecuada al personal interno de la organización responsable de la toma de decisiones.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha notificado el incidente de manera adecuada a las autoridades competentes en el ámbito de la gestión de incidentes de ciberseguridad en caso de ser necesario.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se ha notificado formalmente el incidente a los afectados, personal interno, clientes, proveedores, etc., en caso de ser necesario.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se ha notificado el incidente a los medios de comunicación en caso de ser necesario.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1,0%</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Para el cálculo de la calificación de cada evaluación parcial se tendrán en cuenta únicamente los criterios impartidos hasta la finalización de dicha evaluación. Dado que según la normativa vigente la calificación debe ser un entero numérico comprendido entre el 1 y el 10, el cálculo se realizará de la siguiente manera:</p>
+<p>La calificación de cada criterio se obtendrá sobre su peso, es decir si un criterio tiene un peso del 1% su nota será un número real comprendido entre el 0 y el 1.  Por otra parte, la calificación de cada uno de los resultados de aprendizaje se obtendrá mediante el redondeo de lo que resulte al aplicar la siguiente fórmula a los CE pertenecientes al RA:</p>
+<p>Calificación Ev. Parcial \=(Calificación CE *%)</p>
+<p>Esta misma fórmula permitirá obtener la nota parcial, no obstante esta calificación sólo será efectiva en el caso de que el alumno haya superado todos y cada uno de los Resultados de Aprendizaje impartidos en la evaluación. En el caso de que el alumno no haya superado algún Resultado de Aprendizaje y el resultado de la anterior fórmula sea un número entero mayor o igual que 5, la calificación efectiva de la evaluación será igual a 4 hasta que el alumno supere todos los Resultados de Aprendizaje pendientes, momento en el que se realizará el recálculo de las calificaciones tal y como se indica en el apartado Evaluación Ordinaria.</p>
+<p>La superación de una evaluación, no implica la superación del resto. Si llegado el caso de que alguna alumna o alumno superará la segunda evaluación, pero no hubiere superado la anterior, implica la no superación del curso, y por ello en el informe de evaluación se consignará como no superada. No se conservan partes -aprobadas o suspensas- de un curso a otro. Para el alumnado que no supere alguna de las evaluaciones, se prepararon actividades personalizadas de refuerzo/recuperación para el periodo de recuperación de fin de curso, siendo estas actividades de carácter obligatorio.</p>
+<p>Se utilizarán los siguientes instrumentos de evaluación para comprobar el progreso y las dificultades del alumnado:</p>
+<p>Trabajo diario individual y grupal:</p>
+<ul>
+<li>Observación sistemática sobre el trabajo en clase.  </li>
+<li>Anotaciones sobre participación.  </li>
+<li>Seguimiento de las actividades programadas y realizadas en el aula.  </li>
+<li>Puntualidad y asistencia.</li>
+</ul>
+<p>Prácticas y proyectos, individuales y grupales:</p>
+<ul>
+<li>Realización de prácticas planteadas durante el curso.  </li>
+<li>Presentaciones sobre proyectos generados.</li>
+</ul>
+<p>Pruebas teórico/prácticas individuales:</p>
+<ul>
+<li>Pruebas con ejercicios escritos y/o en el ordenador.</li>
+</ul>
+<h2 id="PD/:bibliografia-y-referencias"><span class="pdf-order">10.4 </span>Bibliografía y referencias</h2>
+<h3 id="PD/:bibliografia-de-departamento"><span class="pdf-order">10.4.1 </span>Bibliografía de departamento</h3>
+<ul>
+<li>Cómo protegerse de los peligros en internet, Jose Carlos Gallego Cano. Ed. 0xWORD  </li>
+<li>Blue Team. Centro de operaciones de ciberseguridad. Numa Editorial.  </li>
+<li>Incident Response in the Age of Cloud. Erdal Ozkaya. Packt .  </li>
+<li>Applied Incident Response. Steve Anson. Wiley.</li>
+</ul>
+<h3 id="PD/:bibliografia-de-aula"><span class="pdf-order">10.4.2 </span>Bibliografía de aula</h3>
+<p>Al alumnado se le facilitará en cada unidad didáctica unos apuntes/presentaciones elaborados por el profesor, basados en los libros de texto que encontramos en la bibliografía de departamento y en las referencias web. </p>
+<h3 id="PD/:referencias-web"><span class="pdf-order">10.4.3 </span>Referencias web</h3>
+<p>Todas las referencias usadas, se encuentran disponibles en la extensión virtual del aula que proporciona la plataforma Moodle del Centro, destacando:</p>
+<ul>
+<li><a href="https://www.incibe.es/">https://www.incibe.es/</a> </li>
+<li><a href="https://www.ccn-cert.cni.es/">https://www.ccn-cert.cni.es/</a></li>
+</ul>
+<h1 id="PD/:modulo-profesional-bastionado-de-redes-y-sistemas-5022"><span class="pdf-order">11. </span>Módulo Profesional. Bastionado de redes y sistemas  (5022)</h1>
+<h2 id="PD/:resultados-de-aprendizaje_1"><span class="pdf-order">11.1 </span>Resultados de aprendizaje</h2>
+<p>El Real Decreto 479/2020, de 7 de abril, establece los siguientes Resultados de aprendizaje, que se presentan desglosados según sus elementos:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">RA</th>
+<th style="text-align: left;">LOGRO</th>
+<th style="text-align: left;">OBJETO</th>
+<th style="text-align: left;">ACCIONES EN EL CONTEXTO DE APRENDIZAJE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">RA 1</td>
+<td style="text-align: left;">Diseña</td>
+<td style="text-align: left;">Planes de securización</td>
+<td style="text-align: left;">Incorporando buenas prácticas para el bastionado de sistemas y redes</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 2</td>
+<td style="text-align: left;">Configura</td>
+<td style="text-align: left;">Sistemas de control de acceso y autenticación de personas</td>
+<td style="text-align: left;">Preservando la confidencialidad y privacidad de los datos</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 3</td>
+<td style="text-align: left;">Administra</td>
+<td style="text-align: left;">Credenciales de acceso a sistemas informáticos</td>
+<td style="text-align: left;">Aplicando los requisitos de funcionamiento y seguridad establecidos</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 4</td>
+<td style="text-align: left;">Diseña</td>
+<td style="text-align: left;">Redes de computadores</td>
+<td style="text-align: left;">Contemplando los requisitos de seguridad</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 5</td>
+<td style="text-align: left;">Configura</td>
+<td style="text-align: left;">Dispositivos y sistemas informáticos</td>
+<td style="text-align: left;">Cumpliendo los requisitos de seguridad</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 6</td>
+<td style="text-align: left;">Configura</td>
+<td style="text-align: left;">Dispositivos para la instalación de sistemas informáticos</td>
+<td style="text-align: left;">Minimizando las probabilidades de exposición a ataques</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 7</td>
+<td style="text-align: left;">Configura</td>
+<td style="text-align: left;">Sistemas informáticos</td>
+<td style="text-align: left;">Minimizando las probabilidades de exposición a ataques</td>
+</tr>
+</tbody>
+</table>
+<h2 id="PD/:contenidos_1"><span class="pdf-order">11.2 </span>Contenidos</h2>
+<h3 id="PD/:contenidos-del-curriculo_1"><span class="pdf-order">11.2.1 </span>Contenidos del currículo</h3>
+<p>Los contenidos son el conjunto de conocimientos, habilidades, destrezas y actitudes cuya asimilación y apropiación por los que aprenden se consideran esenciales para su ejercicio profesional.</p>
+<p>La concreción de los mismos y su secuenciación de aprendizaje se han realizado atendiendo a los siguientes criterios:</p>
+<ul>
+<li>Adecuación a los contenidos básicos reflejados en la normativa estatal, el Real Decreto 479/2020, de 7 de abril.  </li>
+<li>Adecuación de los contenidos al requerido en el entorno laboral local.  </li>
+<li>Adaptación de los contenidos a los conocimientos previos del alumnado.  </li>
+<li>Continuidad y progresión en los contenidos.  </li>
+<li>Equilibrio entre las secuencias de conceptos, objetivos y capacidades.  </li>
+<li>Interrelación entre contenidos.</li>
+</ul>
+<h3 id="PD/:seleccion-y-secuencia-de-contenidos_1"><span class="pdf-order">11.2.2 </span>Selección y secuencia de contenidos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Unidades didácticas</th>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Sesiones</th>
+<th style="text-align: center;">RA</th>
+<th style="text-align: center;">Criterios</th>
+<th>Timestre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">UD1</td>
+<td style="text-align: left;">Zero Trust</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">RA4, RA6</td>
+<td style="text-align: center;">6a), 6b), 6c), 6d), 6e), 4a), 4b), 4c)</td>
+<td>1º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD2</td>
+<td style="text-align: left;">Least-Privilege</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">RA2, RA3, RA4, RA7</td>
+<td style="text-align: center;">2a), 2b), 2c), 2d), 2e). 3a), 4e), 7a) 7b)</td>
+<td>1º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD3</td>
+<td style="text-align: left;">Reduce Attack Surface</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">RA5</td>
+<td style="text-align: center;">5b)</td>
+<td>1º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD4</td>
+<td style="text-align: left;">Under Control</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">RA3, RA4, RA5, RA7</td>
+<td style="text-align: center;">3b), 3c), 3d), 3e), 4d), 5a), 5e), 7c), 7d), 7e)</td>
+<td>2º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD5</td>
+<td style="text-align: left;">Risk Management</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">RA1</td>
+<td style="text-align: center;">1a), 1b), 1c), 1d), 1e), 1f)</td>
+<td>2º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD6</td>
+<td style="text-align: left;">Defense in Depth</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">RA5</td>
+<td style="text-align: center;">5c), 5d)</td>
+<td>2º</td>
+</tr>
+</tbody>
+</table>
+<h3 id="PD/:tratamiento-de-temas-transversales_1"><span class="pdf-order">11.2.3 </span>Tratamiento de temas transversales</h3>
+<p>Los temas transversales -no específicos de la materia- y su tratamiento, están vinculados a las situaciones que se presenten en las actividades propuestas, distribuidos a lo largo del módulo.</p>
+<p>Se considerarán los siguientes temas transversales:</p>
+<ul>
+<li>
+<p>Sostenibilidad medioambiental.</p>
+</li>
+<li>
+<p>Educación del consumidor.</p>
+</li>
+<li>
+<p>Salud laboral.</p>
+</li>
+<li>
+<p>Educación para la igualdad de oportunidades entre ambos sexos.</p>
+</li>
+<li>
+<p>Igualdad de oportunidades y respeto a personas de otras culturas y credos.</p>
+</li>
+<li>
+<p>Inserción laboral.</p>
+</li>
+<li>
+<p>Creación de empleo.</p>
+</li>
+<li>
+<p>Educación para la paz y la convivencia.</p>
+</li>
+<li>
+<p>Educación para la ciudadanía.</p>
+</li>
+<li>
+<p>Manejo de documentación técnica en inglés.</p>
+</li>
+</ul>
+<h3 id="PD/:interdisciplinaridad_1"><span class="pdf-order">11.2.4 </span>Interdisciplinaridad</h3>
+<p>En el curso, todos los módulos se relacionan íntimamente con el presente, con cuyo profesorado debemos coordinarnos:</p>
+<ul>
+<li>
+<p>5021. Incidentes de ciberseguridad.</p>
+</li>
+<li>
+<p>5022. Bastionado de redes y sistemas.</p>
+</li>
+<li>
+<p>5023. Puesta en producción segura.</p>
+</li>
+<li>
+<p>5025. Hacking ético.</p>
+</li>
+<li>
+<p>5026. Normativa de ciberseguridad.</p>
+</li>
+</ul>
+<h2 id="PD/:evaluacion_2"><span class="pdf-order">11.3 </span>Evaluación</h2>
+<p>A continuación, se especifica el peso de cada uno de los resultados de aprendizaje, así como el de los criterios de evaluación que lo componen. La mayor o menor ponderación de los criterios se obtiene en base al nivel de dificultad y contenidos a desarrollar para cada criterio.</p>
+<table>
+<thead>
+<tr>
+<th>Resultados de Aprendizaje</th>
+<th>Criterios de evaluación</th>
+<th style="text-align: center;">% RA</th>
+<th style="text-align: center;">Peso C.E.</th>
+<th style="text-align: center;">Técnica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA1. Diseña planes de securización incorporando buenas prácticas para el bastionado de sistemas y redes.</td>
+<td>a) Se han identificado los activos, las amenazas y vulnerabilidades de la organización.</td>
+<td style="text-align: center;">15%</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">Proyectos aplicados y pruebas teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se ha evaluado las medidas de seguridad actuales.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha elaborado un análisis de riesgo de la situación actual en ciberseguridad de la organización</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se ha priorizado las medidas técnicas de seguridad a implantar en la organización teniendo también en cuenta los principios de la Economía Circular.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se ha diseñado y elaborado un plan de medidas técnicas de seguridad a implantar en la organización, apropiadas para garantizar un nivel de seguridad adecuado en función de los riesgos de la organización.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>f) Se han identificado las mejores prácticas en base a estándares, guías y políticas de securización adecuadas para el bastionado de los sistemas y redes de la organización.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA2. Configura sistemas de control de acceso y autenticación de personas preservando la confidencialidad y privacidad de los datos.</td>
+<td>a) Se han definido los mecanismos de autenticación en base a distintos / múltiples factores (físicos, inherentes y basados en el conocimiento), existentes.</td>
+<td style="text-align: center;">7,5%</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">Proyectos aplicados y pruebas teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han definido protocolos y políticas de autenticación basados en contraseñas y frases de paso, en base a las principales vulnerabilidades y tipos de ataques.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se han definido protocolos y políticas de autenticación basados en certificados digitales y tarjetas inteligentes, en base a las principales vulnerabilidades y tipos de ataques.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han definido protocolos y políticas de autenticación basados en tokens, OTPs, etc., en base a las principales vulnerabilidades y tipos de ataques.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han definido protocolos y políticas de autenticación basados en características biométricas, según las principales vulnerabilidades y tipos de ataques.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA3. Administra credenciales de acceso a sistemas informáticos aplicando los requisitos de funcionamiento y seguridad establecidos.</td>
+<td>a) Se han identificado los tipos de credenciales más utilizados.</td>
+<td style="text-align: center;">7,5%</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">Proyectos aplicados y pruebas teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han generado y utilizado diferentes certificados digitales como medio de acceso a un servidor remoto.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha comprobado la validez y la autenticidad de un certificado digital de un servicio web.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han comparado certificados digitales válidos e inválidos por diferentes motivos.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se ha instalado y configurado un servidor seguro para la administración de credenciales (tipo RADIUS - Remote Access Dial In User Service).</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA4. Diseña redes de computadores contemplando los requisitos de seguridad.</td>
+<td>a) Se ha incrementado el nivel de seguridad de una red local plana segmentándola físicamente y utilizando técnicas y dispositivos de enrutamiento.</td>
+<td style="text-align: center;">15%</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">Proyectos aplicados y pruebas teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se ha optimizado una red local plana utilizando técnicas de segmentación lógica (VLANs).</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha adaptado un segmento de una red local ya operativa utilizando técnicas de subnetting para incrementar su segmentación respetando los direccionamientos existentes.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han configurado las medidas de seguridad adecuadas en los dispositivos que dan acceso a una red inalámbrica (routers, puntos de acceso, etc.).</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se ha establecido un túnel seguro de comunicaciones entre dos sedes geográficamente separadas.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA5. Configura dispositivos y sistemas informáticos cumpliendo los requisitos de seguridad.</td>
+<td>a) Se han configurado dispositivos de seguridad perimetral acorde a una serie de requisitos de seguridad.</td>
+<td style="text-align: center;">20%</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">Proyectos aplicados y pruebas teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han detectado errores de configuración de dispositivos de red mediante el análisis de tráfico.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se han identificado comportamientos no deseados en una red a través del análisis de los registros (Logs), de un cortafuego.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han implementado contramedidas frente a comportamientos no deseados en una red.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han caracterizado, instalado y configurado diferentes herramientas de monitorización.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA6. Configura dispositivos para la instalación de sistemas informáticos minimizando las probabilidades de exposición a ataques.</td>
+<td>a) Se ha configurado la BIOS para incrementar la seguridad del dispositivo y su contenido minimizando las probabilidades de exposición a ataques.</td>
+<td style="text-align: center;">15%</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">Proyectos aplicados y pruebas teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se ha preparado un sistema informático para su primera instalación teniendo en cuenta las medidas de seguridad necesarias.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha configurado un sistema informático para que un actor malicioso no pueda alterar la secuencia de arranque con fines de acceso ilegítimo.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se ha instalado un sistema informático utilizando sus capacidades de cifrado del sistema de ficheros para evitar la extracción física de datos.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se ha particionado el sistema de ficheros del sistema informático para minimizar riesgos de seguridad.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA7. Configura sistemas informáticos minimizando las probabilidades de exposición a ataques.</td>
+<td>a) Se han enumerado y eliminado los programas, servicios y protocolos innecesarios que hayan sido instalados por defecto en el sistema.</td>
+<td style="text-align: center;">20%</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">Proyectos aplicados y pruebas teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han configurado las características propias del sistema informático para imposibilitar el acceso ilegítimo mediante técnicas de explotación de procesos.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha incrementado la seguridad del sistema de administración remoto SSH y otros.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se ha instalado y configurado un Sistema de detección de intrusos en un Host (HIDS) en el sistema informático.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han instalado y configurado sistemas de copias de seguridad.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>La calificación de cada resultado de aprendizaje será la media ponderada de los distintos criterios de evaluación, repartidos en los siguientes pesos:<br/>
+- Básicos (B): 4.<br/>
+- Intermedios (I): 2.<br/>
+- Avanzados (A): 1.<br/>
+Por ejemplo, si un resultado de aprendizaje tiene 6 criterios de evaluación repartidos de la siguiente forma: c1 (básico), c2 (básico), c3 (básico), c4 (intermedio), c5 (intermedio) y c6 (avanzado), se calcularía la calificación sumando las multiplicaciones de la nota de cada criterio por su peso correspondiente y dividiendo el resultado por la suma de todos los pesos. La fórmula matemática sería la siguiente:</p>
+<p>$$
+\text{Calificación del RA} = c_{14} + c_{24} + c_{34} + c_{42} + c_{52} + c_{614} + 4 + 4 + 2 + 2 + 1
+$$</p>
+<p>El alumnado que supere o iguale la calificación de 5 en cada uno de los Resultados de Aprendizaje tras aplicar estas ponderaciones, aprueba el módulo.<br/>
+El alumno también tendrá posibilidad de subir nota y podrá solicitar al profesor un plan de mejora que consistirá en un conjunto de trabajos, prácticas o pruebas sobre los contenidos a los que están asociados los resultados de aprendizaje en los que desea mejorar su calificación.<br/>
+Si no se han superado los contenidos del módulo a finales del mes de mayo, se desarrollará la recuperación de los R.A pendientes durante el mes de junio y consistirá en un conjunto de prácticas y/o pruebas sobre los contenidos a los que están asociados los resultados de aprendizaje no superados.</p>
+<h2 id="PD/:bibliografia-y-referencias_1"><span class="pdf-order">11.4 </span>Bibliografía y referencias</h2>
+<h3 id="PD/:bibliografia-de-departamento_1"><span class="pdf-order">11.4.1 </span>Bibliografía de departamento</h3>
+<ul>
+<li>Hardening de servidores GNU/Linux. 4ªEdición. Ed. 0xWORD  </li>
+<li>Máxima Seguridad en Windows: Secretos Técnicos. 5ª Edición. Ed. 0xWORD  </li>
+<li>Mastering Linux Security and Hardening. 2ª Edición. Ed. Packt.  </li>
+<li>Mastering Windows Security and Hardening. Ed. Packt.  </li>
+<li>Network Security Strategies. Ed. Packt.</li>
+</ul>
+<h3 id="PD/:bibliografia-de-aula_1"><span class="pdf-order">11.4.2 </span>Bibliografía de aula</h3>
+<p>Al alumnado se le facilitará en cada unidad didáctica unos apuntes/presentaciones elaborados por el profesor, basados en los libros de texto que encontramos en la bibliografía de departamento y en las referencias web.   </p>
+<h3 id="PD/:referencias-web_1"><span class="pdf-order">11.4.3 </span>Referencias web</h3>
+<p>Todas las referencias usadas, se encuentran disponibles en la extensión virtual del aula que proporciona la plataforma Moodle del Centro.</p>
+<h1 id="PD/:modulo-profesional-puesta-en-produccion-segura-5023"><span class="pdf-order">12. </span>Módulo Profesional. Puesta en producción segura  (5023)</h1>
+<h2 id="PD/:resultados-de-aprendizajes"><span class="pdf-order">12.1 </span>Resultados de aprendizajes</h2>
+<p>Los Resultados de Aprendizaje establecidos por la normativa para este módulo de Puesta en producción segura son 5 que se enumeran a continuación y se presentan desglosado según sus elementos:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">RA</th>
+<th style="text-align: left;">LOGRO</th>
+<th style="text-align: left;">OBJETO</th>
+<th style="text-align: left;">ACCIONES EN EL CONTEXTO DE APRENDIZAJE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">RA 1</td>
+<td style="text-align: left;">Prueba</td>
+<td style="text-align: left;">Aplicaciones web y aplicaciones para dispositivos móviles</td>
+<td style="text-align: left;">Analizando la estructura del código y su modelo de ejecución</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 2</td>
+<td style="text-align: left;">Determina</td>
+<td style="text-align: left;">El nivel de seguridad requerido por aplicaciones</td>
+<td style="text-align: left;">Identificando los vectores de ataque habituales y sus riesgos asociados</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 3</td>
+<td style="text-align: left;">Detecta y corrige</td>
+<td style="text-align: left;">Vulnerabilidades de aplicaciones web</td>
+<td style="text-align: left;">Analizando su código fuente y configurando servidores web</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 4</td>
+<td style="text-align: left;">Detecta</td>
+<td style="text-align: left;">Problemas de seguridad en las aplicaciones móviles</td>
+<td style="text-align: left;">Monitorizando su ejecución y analizando ficheros y datos</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 5</td>
+<td style="text-align: left;">Implanta</td>
+<td style="text-align: left;">Sistemas seguros de desplegado de software</td>
+<td style="text-align: left;">Utilizando herramientas para la automatización de la construcción de sus elementos.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="PD/:contenidos_2"><span class="pdf-order">12.2 </span>Contenidos</h2>
+<h3 id="PD/:contenidos-del-curriculo_2"><span class="pdf-order">12.2.1 </span>Contenidos del currículo</h3>
+<p>Los contenidos son el conjunto de conocimientos, habilidades, destrezas y actitudes cuya asimilación y apropiación por los que aprenden se consideran esenciales para su ejercicio profesional.</p>
+<p>La concreción de los mismos y su secuenciación de aprendizaje se han realizado atendiendo a los siguientes criterios: </p>
+<ul>
+<li>Adecuación a los contenidos básicos reflejados en la normativa estatal, el Real Decreto 479/2020, de 7 de abril.   </li>
+<li>Adecuación de los contenidos al requerido en el entorno laboral local.  </li>
+<li>Adaptación de los contenidos a los conocimientos previos del alumnado.  </li>
+<li>Continuidad y progresión en los contenidos.  </li>
+<li>Equilibrio entre las secuencias de conceptos, objetivos y capacidades.  </li>
+<li>Interrelación entre contenidos.</li>
+</ul>
+<h3 id="PD/:seleccion-y-secuencia-de-contenidos_2"><span class="pdf-order">12.2.2 </span>Selección y secuencia de contenidos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Unidades didácticas</th>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Sesiones</th>
+<th style="text-align: center;">RA</th>
+<th style="text-align: center;">Criterios</th>
+<th style="text-align: center;">Trimestre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">UT1</td>
+<td style="text-align: left;">Fundamentos del Software</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">RA1</td>
+<td style="text-align: center;">a, b, c, d, e</td>
+<td style="text-align: center;">1º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UT2</td>
+<td style="text-align: left;">Verificación  de seguridad en las aplicaciones</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">RA 2</td>
+<td style="text-align: center;">a, b, c, d</td>
+<td style="text-align: center;">1º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UT4</td>
+<td style="text-align: left;">Detección y corrección vulnerabilidades</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">RA3</td>
+<td style="text-align: center;">a, b, c, d, e, f, g</td>
+<td style="text-align: center;">2º</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">2º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UT3</td>
+<td style="text-align: left;">Desplegado de software seguro</td>
+<td style="text-align: center;">44</td>
+<td style="text-align: center;">RA5</td>
+<td style="text-align: center;">a, b, c, d, e</td>
+<td style="text-align: center;">2º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UT5</td>
+<td style="text-align: left;">Seguridad en aplicaciones móviles</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">RA4</td>
+<td style="text-align: center;">a, b, c, d, e</td>
+<td style="text-align: center;">2º</td>
+</tr>
+</tbody>
+</table>
+<h3 id="PD/:tratamiento-de-temas-transversales_2"><span class="pdf-order">12.2.3 </span>Tratamiento de temas transversales</h3>
+<p>Los temas transversales -no específicos de la materia- y su tratamiento, están vinculados a las situaciones que se presenten en las actividades propuestas, distribuidos a lo largo del módulo.</p>
+<p>Se considerarán los siguientes temas transversales:</p>
+<ul>
+<li>Sostenibilidad medioambiental.  </li>
+<li>Educación del consumidor.  </li>
+<li>Salud laboral.  </li>
+<li>Educación para la igualdad de oportunidades entre ambos sexos.  </li>
+<li>Igualdad de oportunidades y respeto a personas de otras culturas y credos.  </li>
+<li>Inserción laboral.  </li>
+<li>Creación de empleo.  </li>
+<li>Educación para la paz y la convivencia.  </li>
+<li>Educación para la ciudadanía.  </li>
+<li>Manejo de documentación técnica en inglés.</li>
+</ul>
+<h3 id="PD/:interdisciplinaridad_2"><span class="pdf-order">12.2.4 </span>Interdisciplinaridad</h3>
+<p>En el curso, todos los módulos se relacionan íntimamente con el presente, con cuyo profesorado debemos coordinarnos:</p>
+<ul>
+<li>5021. Incidentes de ciberseguridad.  </li>
+<li>5022. Bastionado de redes y sistemas.  </li>
+<li>5024. Análisis Forense Informático.  </li>
+<li>5025. Hacking ético.  </li>
+<li>5026. Normativa de ciberseguridad.</li>
+</ul>
+<h2 id="PD/:evaluacion_3"><span class="pdf-order">12.3 </span>Evaluación</h2>
+<table>
+<thead>
+<tr>
+<th>Resultados de Aprendizaje</th>
+<th>Criterios de evaluación</th>
+<th>% RA</th>
+<th style="text-align: center;">Peso C.E.</th>
+<th>Técnicas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA1 Prueba aplicaciones  web y aplicaciones para dispositivos móviles analizando la estructura del código y su modelo de ejecución.</td>
+<td>a) Se han comparado diferentes lenguajes de programación de acuerdo a sus características principales.</td>
+<td>11 %</td>
+<td style="text-align: center;">2 %</td>
+<td>Proyecto de desarrollo y testing</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han descrito los diferentes modelos de ejecución de software.</td>
+<td></td>
+<td style="text-align: center;">2%</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se han reconocido los elementos básicos del código fuente, dándoles significado.</td>
+<td></td>
+<td style="text-align: center;">2 %</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han ejecutado diferentes tipos de prueba de software.</td>
+<td></td>
+<td style="text-align: center;">3 %</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han evaluado los lenguajes de programación de acuerdo a la infraestructura de seguridad que proporcionan.</td>
+<td></td>
+<td style="text-align: center;">2 %</td>
+<td></td>
+</tr>
+<tr>
+<td>RA2 Determina el nivel de seguridad requerido por aplicaciones identificando los vectores de ataque habituales y sus riesgos asociados.</td>
+<td>a) Se han caracterizado los niveles de verificación de seguridad en aplicaciones establecidos por los estándares internacionales (ASVS, “Application Security Verification Standard”).</td>
+<td>12 %</td>
+<td style="text-align: center;">2 %</td>
+<td>Trabajo: Análisis y verificación de software</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se ha identificado el nivel de verificación de seguridad requerido por las aplicaciones en función de sus riesgos de acuerdo a estándares reconocidos.</td>
+<td></td>
+<td style="text-align: center;">2 %</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se han enumerado los requisitos de verificación necesarios asociados al nivel de seguridad establecido.</td>
+<td></td>
+<td style="text-align: center;">4 %</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han reconocido los principales riesgos de las aplicaciones desarrolladas, en función de sus características.</td>
+<td></td>
+<td style="text-align: center;">4 %</td>
+<td></td>
+</tr>
+<tr>
+<td>RA3 Detecta y corrige vulnerabilidades de aplicaciones web analizando su código fuente y configurando servidores web.</td>
+<td>a) Se han validado las entradas de los usuarios.</td>
+<td>35 %</td>
+<td style="text-align: center;">5 %</td>
+<td>Actividades teórico / prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han detectado riesgos de inyección tanto en el servidor como en el cliente.</td>
+<td></td>
+<td style="text-align: center;">5 %</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha gestionado correctamente la sesión del usuario durante el uso de la aplicación.</td>
+<td></td>
+<td style="text-align: center;">5 %</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se ha hecho uso de roles para el control de acceso.</td>
+<td></td>
+<td style="text-align: center;">5 %</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han utilizado algoritmos criptográficos seguros para almacenar las contraseñas de usuario.</td>
+<td></td>
+<td style="text-align: center;">5 %</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>f) Se han configurado servidores web para reducir el riesgo de sufrir ataques conocidos.</td>
+<td></td>
+<td style="text-align: center;">5 %</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>g) Se han incorporado medidas para evitar los ataques a contraseñas, envío masivo de mensajes o registros de usuarios a través de programas automáticos (bots).</td>
+<td></td>
+<td style="text-align: center;">5 %</td>
+<td></td>
+</tr>
+<tr>
+<td>RA4 Detecta problemas de seguridad en las aplicaciones para dispositivos móviles, monitorizando su ejecución y analizando ficheros y datos</td>
+<td>a) Se han comparado los diferentes modelos de permisos de las plataformas móviles.</td>
+<td>10%</td>
+<td style="text-align: center;">2 %</td>
+<td>Actividades teórico / prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han descrito técnicas de almacenamiento seguro de datos en los dispositivos, para evitar la fuga de información.</td>
+<td></td>
+<td style="text-align: center;">2 %</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha implantado un sistema de validación de compras integradas en la aplicación haciendo uso de validación en el servidor.</td>
+<td></td>
+<td style="text-align: center;">2 %</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han utilizado herramientas de monitorización de tráfico de red para detectar el uso de protocolos inseguros de comunicación de las aplicaciones móviles.</td>
+<td></td>
+<td style="text-align: center;">2 %</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han inspeccionado binarios de aplicaciones móviles para buscar fugas de información sensible.</td>
+<td></td>
+<td style="text-align: center;">2 %</td>
+<td></td>
+</tr>
+<tr>
+<td>RA5  Implanta sistemas seguros de desplegado de software, utilizando herramientas para la automatización de la construcción de sus elementos.</td>
+<td>a) Se han identificado las características, principios y objetivos de la integración del desarrollo y operación del software.</td>
+<td>32 %</td>
+<td style="text-align: center;">2%</td>
+<td>Proyecto de puesta en producción</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han implantado sistemas de control de versiones, administrando los roles y permisos solicitados.</td>
+<td></td>
+<td style="text-align: center;">6%</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se han instalado, configurado y verificado sistemas de integración continua, conectándolos con sistemas de control de versiones.</td>
+<td></td>
+<td style="text-align: center;">6%</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han planificado, implementado y automatizado planes de desplegado de software.</td>
+<td></td>
+<td style="text-align: center;">6%</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se ha evaluado la capacidad del sistema desplegado para reaccionar de forma automática a fallos.</td>
+<td></td>
+<td style="text-align: center;">4%</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>f) Se han documentado las tareas realizadas y los procedimientos a seguir para la recuperación ante desastres.</td>
+<td></td>
+<td style="text-align: center;">4%</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>g) Se han creado bucles de retroalimentación ágiles entre los miembros del equipo.</td>
+<td></td>
+<td style="text-align: center;">4%</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Todas las actividades son evaluables, sin entender la evaluación como un proceso de recogida de información, pero no todas son objeto de calificación, sólo aquellas recogidas en la tabla anterior y que hemos asociado a los criterios de evaluación y a los resultados de aprendizaje y se suelen denominar actividades de evaluación. </p>
+<p>Además, llevaremos un registro en Excel de la calificación de cada RA, unidad, por actividad y criterio.</p>
+<p>A la puntuación obtenida en la unidad se le aplicará la ponderación correspondiente a los Resultados de Aprendizaje, los cuales los RA 3 y 5 tienen mayor peso en la nota final, un 35% y 28% y los RA 1, 2 y 4 tienen entre 10-15%. Esta elección es debida a la dedicación profesional que harán de este módulo, ya que los dos primeros resultados de aprendizaje comentados anteriormente, atañan un gran peso a nivel profesional, debido a que son parte del proceso habitual en el trabajo de la puesta en producción segura, y el resto de unidades componen recursos complementarios para ayudar a esa puesta en producción. </p>
+<p>Para calificar cada unidad utilizaremos aquellas actividades de evaluación planteadas, en la que se ponderan los CE y para establecer la nota de cada evaluación, atenderemos a las siguientes consideraciones: </p>
+<ul>
+<li>En el primer trimestre se evaluarán completos los RA 1, 2 clasificando con el sistema de ponderación establecido, llevándolo al 100% para puntuar en Séneca por el sistema tradicional. Es decir, un alumno/a que tenga un diez en todas las unidades del primer trimestre habrá obtenido un 27% de los RA, pero nosotros puntuaremos con un 10 la evaluación.  </li>
+<li>En la segunda se evaluarán del mismo modo los criterios que nos resten de los RA 3  y de forma completa  4 y 5 .  </li>
+<li>Para calcular la nota final, como ya hemos comentado, se aplicarán los porcentajes de los todos Resultados de Aprendizaje (RA).  </li>
+<li>Para obtener la nota de la evaluación extraordinaria se deberá realizar un plan de recuperación personalizado a cada alumno o alumna, dependiendo de los RA que no haya superado.</li>
+</ul>
+<p>Para obtener una calificación positiva en los trimestres y en la nota final todos los RA deben ser alcanzados, tras aplicar el sistema de ponderación, en un 50% cada uno de los RA, lo que es lo mismo si traducimos al lenguaje de calificación tradicional la puntuación deberá ser al menos un 5, de forma excepcional el alumnado que obtenga un 5 en la valoración global, pero tenga algún RA con puntuación entre 4 y 4,99 habría superado el módulo, sin necesidad de recuperar ese RA. No obstante, los alumnos que alcance unos RA y otros no se le dará diferentes oportunidades de obtenerlos, realizándose pruebas de recuperación y oportunidades de mejoras del proyecto.</p>
+<h2 id="PD/:bibliografia-y-referencias_2"><span class="pdf-order">12.4 </span>Bibliografía y referencias</h2>
+<h3 id="PD/:bibliografia-de-departamento_2"><span class="pdf-order">12.4.1 </span>Bibliografía de departamento</h3>
+<p>Ortega Candel, J. M. (2020). <em>Desarrollo seguro en ingeniería del software. Aplicaciones seguras con Android, NodeJS, Python y C++</em>. Marcombo.</p>
+<h3 id="PD/:bibliografia-de-aula_2"><span class="pdf-order">12.4.2 </span>Bibliografía de aula</h3>
+<p>Al alumnado se le facilitará en cada unidad didáctica unos apuntes/presentaciones elaborados por el profesor, basados en los libros de texto que encontramos en la bibliografía de departamento y en las referencias web. </p>
+<h3 id="PD/:referencias-web_2"><span class="pdf-order">12.4.3 </span>Referencias web</h3>
+<p>Todas las referencias usadas, se encuentran disponibles en la extensión virtual del aula que proporciona la plataforma Moodle del Centro.</p>
+<h1 id="PD/:modulo-profesional-analisis-forense-informatico-5024"><span class="pdf-order">13. </span>Módulo Profesional. Análisis forense informático  (5024)</h1>
+<h2 id="PD/:resultados-de-aprendizaje_2"><span class="pdf-order">13.1 </span>Resultados de aprendizaje</h2>
+<p>El Real Decreto 479/2020, de 7 de abril, establece para este módulo profesional, los siguientes Resultados de aprendizaje:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">RA</th>
+<th style="text-align: left;">LOGRO</th>
+<th style="text-align: left;">OBJETO</th>
+<th style="text-align: left;">ACCIONES EN EL CONTEXTO DE APRENDIZAJE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">RA 1</td>
+<td style="text-align: left;">Aplica</td>
+<td style="text-align: left;">Metodologías de análisis forense</td>
+<td style="text-align: left;">Caracterizando las fases de preservación, adquisición, análisis y documentación</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 2</td>
+<td style="text-align: left;">Realiza</td>
+<td style="text-align: left;">Análisis forenses en dispositivos móviles</td>
+<td style="text-align: left;">Aplicando metodologías establecidas, actualizadas y reconocidas</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 3</td>
+<td style="text-align: left;">Realiza</td>
+<td style="text-align: left;">Análisis forenses en Cloud</td>
+<td style="text-align: left;">Aplicando metodologías establecidas, actualizadas y reconocidas</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 4</td>
+<td style="text-align: left;">Realiza</td>
+<td style="text-align: left;">Análisis forense en dispositivos de IoT</td>
+<td style="text-align: left;">Aplicando metodologías establecidas, actualizadas y reconocidas</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 5</td>
+<td style="text-align: left;">Documenta</td>
+<td style="text-align: left;">Análisis forenses</td>
+<td style="text-align: left;">Elaborando informes que incluyan la normativa aplicable</td>
+</tr>
+</tbody>
+</table>
+<h2 id="PD/:contenidos_3"><span class="pdf-order">13.2 </span>Contenidos</h2>
+<h3 id="PD/:contenidos-del-curriculo_3"><span class="pdf-order">13.2.1 </span>Contenidos del currículo</h3>
+<p>Los contenidos son el conjunto de conocimientos, habilidades, destrezas y actitudes cuya asimilación y apropiación por los que aprenden se consideran esenciales para su ejercicio profesional.</p>
+<p>La concreción de los mismos y su secuenciación de aprendizaje se han realizado atendiendo a los siguientes criterios: </p>
+<ul>
+<li>Adecuación a los contenidos básicos reflejados en la normativa estatal, el Real Decreto 479/2020, de 7 de abril.  </li>
+<li>
+<p>Adecuación de los contenidos al requerido en el entorno laboral local.</p>
+</li>
+<li>
+<p>Adaptación de los contenidos a los conocimientos previos del alumnado.</p>
+</li>
+<li>
+<p>Continuidad y progresión en los contenidos.</p>
+</li>
+<li>
+<p>Equilibrio entre las secuencias de conceptos, objetivos y capacidades.</p>
+</li>
+<li>
+<p>Interrelación entre contenidos.</p>
+</li>
+</ul>
+<p>Para una mejor compresión de contenido global, dividiremos el módulo en 9 bloques de contenido, intentando agrupar ordenadamente conceptos intrínsecamente conectados.</p>
+<h3 id="PD/:seleccion-y-secuencia-de-contenidos_3"><span class="pdf-order">13.2.2 </span>Selección y secuencia de contenidos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Unidades didácticas</th>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Sesiones</th>
+<th style="text-align: center;">RA</th>
+<th style="text-align: center;">Criterios</th>
+<th style="text-align: center;">Trimestre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">UD1</td>
+<td style="text-align: left;">Evidence Acquisition and Preservation</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">a, b, c</td>
+<td style="text-align: center;">1º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD2</td>
+<td style="text-align: left;">Windows Forensics</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">d, e</td>
+<td style="text-align: center;">1º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD3</td>
+<td style="text-align: left;">Documentation and Reporting</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">a, b, c, d, e, f</td>
+<td style="text-align: center;">1º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD4</td>
+<td style="text-align: left;">Memory Forensics</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">g</td>
+<td style="text-align: center;">2º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD5</td>
+<td style="text-align: left;">Linux Forensics</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">f</td>
+<td style="text-align: center;">2º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD6</td>
+<td style="text-align: left;">Cloud Forensics</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">a, b, c, d, e, f</td>
+<td style="text-align: center;">2º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD7</td>
+<td style="text-align: left;">Mobile Device Forensics</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">a, b, c, d</td>
+<td style="text-align: center;">2º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD8</td>
+<td style="text-align: left;">IoT Forensics</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">a, b, c, d, e, f, g, h, i</td>
+<td style="text-align: center;">2º</td>
+</tr>
+</tbody>
+</table>
+<h3 id="PD/:tratamiento-de-temas-transversales_3"><span class="pdf-order">13.2.3 </span>Tratamiento de temas transversales</h3>
+<p>Los temas transversales -no específicos de la materia- y su tratamiento, están vinculados a las situaciones que se presenten en las actividades propuestas, distribuidos a lo largo del módulo.</p>
+<p>Se considerarán los siguientes temas transversales:</p>
+<ul>
+<li>
+<p>Sostenibilidad medioambiental.</p>
+</li>
+<li>
+<p>Educación del consumidor.</p>
+</li>
+<li>
+<p>Salud laboral.</p>
+</li>
+<li>
+<p>Educación para la igualdad de oportunidades entre ambos sexos.</p>
+</li>
+<li>
+<p>Igualdad de oportunidades y respeto a personas de otras culturas y credos.</p>
+</li>
+<li>
+<p>Inserción laboral.</p>
+</li>
+<li>
+<p>Creación de empleo.</p>
+</li>
+<li>
+<p>Educación para la paz y la convivencia.</p>
+</li>
+<li>
+<p>Educación para la ciudadanía.</p>
+</li>
+<li>
+<p>Manejo de documentación técnica en inglés.</p>
+</li>
+</ul>
+<h3 id="PD/:interdisciplinaridad_3"><span class="pdf-order">13.2.4 </span>Interdisciplinaridad</h3>
+<p>En el curso, todos los módulos se relacionan íntimamente con el presente, con cuyo profesorado debemos coordinarnos:</p>
+<ul>
+<li>
+<p>5021. Incidentes de ciberseguridad.</p>
+</li>
+<li>
+<p>5022. Bastionado de redes y sistemas.</p>
+</li>
+<li>
+<p>5023. Puesta en producción segura.</p>
+</li>
+<li>
+<p>5025. Hacking ético.</p>
+</li>
+<li>
+<p>5026. Normativa de ciberseguridad.</p>
+</li>
+</ul>
+<h2 id="PD/:evaluacion_4"><span class="pdf-order">13.3 </span>Evaluación</h2>
+<p>A continuación, se especifica para cada unidad didáctica los resultados de aprendizaje y los criterios de evaluación correspondientes a la misma, así como los instrumentos de evaluación que se usarán para calificar cada uno de ellos. </p>
+<table>
+<thead>
+<tr>
+<th>Resultados de Aprendizaje</th>
+<th>Criterios de evaluación</th>
+<th style="text-align: center;">Instrumentos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA1. Aplica metodologías de análisis forense caracterizando las fases de preservación, adquisición, análisis y documentación.</td>
+<td>a) Se han identificado los dispositivos a analizar para garantizar la preservación de evidencias.</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han utilizado los mecanismos y las herramientas adecuadas para la adquisición y extracción de las evidencias.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha asegurado la escena y conservado la cadena de custodia.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se ha documentado el proceso realizado de manera metódica.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se ha considerado la línea temporal de las evidencias.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>f) Se ha elaborado un informe de conclusiones a nivel técnico y ejecutivo.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>g) Se han presentado y expuesto las conclusiones del análisis forense realizado.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA2. Realiza análisis forenses en dispositivos móviles, aplicando metodologías establecidas, actualizadas y reconocidas.</td>
+<td>a) Se ha realizado el proceso de toma de evidencias en un dispositivo móvil.</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han extraído, decodificado y analizado las pruebas conservando la cadena de custodia.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se han generado informes de datos móviles, cumpliendo con los requisitos de la industria forense de telefonía móvil.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han presentado y expuesto las conclusiones del análisis forense realizado a quienes proceda.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA3. Realiza análisis forenses en Cloud, aplicando metodologías establecidas, actualizadas y reconocidas.</td>
+<td>a) Se ha desarrollado una estrategia de análisis forense en Cloud, asegurando la disponibilidad de los recursos y capacidades necesarios una vez ocurrido el incidente.</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se ha conseguido identificar las causas, el alcance y el impacto real causado por el incidente.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se han realizado las fases del análisis forense en Cloud.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han identificado las características intrínsecas de la nube (elasticidad, ubicuidad, abstracción, volatilidad y compartición de recursos).</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han cumplido los requerimientos legales en vigor, RGPD (Reglamento general de protección de datos) y directiva NIS (Directiva de la UE sobre seguridad de redes y sistemas de información) o las que eventualmente pudieran sustituirlas.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>f) Se han presentado y expuesto las conclusiones del análisis forense realizado.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA4. Realiza análisis forense en dispositivos de IoT, aplicando metodologías establecidas, actualizadas y reconocidas.</td>
+<td>a) Se han identificado los dispositivos a analizar garantizando la preservación de las evidencias.</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han utilizado mecanismos y herramientas adecuadas para la adquisición y extracción de evidencias</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha garantizado la autenticidad, completitud, fiabilidad y legalidad de las evidencias extraídas.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han realizado análisis de evidencias de manera manual y mediante herramientas.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se ha documentado el proceso de manera metódica y detallada.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>f) Se ha considerado la línea temporal de las evidencias.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>g) Se ha mantenido la cadena de custodia</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>h) Se ha elaborado un informe de conclusiones a nivel técnico y ejecutivo.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>i) Se han presentado y expuesto las conclusiones del análisis forense realizado.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA5. Documenta análisis forenses elaborando informes que incluyan la normativa aplicable.</td>
+<td>a) Se ha definido el objetivo del informe pericial y su justificación.</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se ha definido el ámbito de aplicación del informe pericial.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se han documentado los antecedentes.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han recopilado las normas legales y reglamentos cumplidos en el análisis forense realizado.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han recogido los requisitos establecidos por el cliente.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>f) Se han incluido las conclusiones y su justificación.</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="PD/:bibliografia-y-referencias_3"><span class="pdf-order">13.4 </span>Bibliografía y referencias</h2>
+<h3 id="PD/:bibliografia-de-departamento_3"><span class="pdf-order">13.4.1 </span>Bibliografía de departamento</h3>
+<ul>
+<li>Técnicas de Análisis Forense informático para Peritos Judiciales profesionales. Ed.0xword  </li>
+<li>Análisis Forense Digital en Entornos Windows. 3ª Edición revisada  </li>
+<li>Incident Response &amp; Computer Forensics, Third Edition. McGraw-Hill Education.</li>
+</ul>
+<h3 id="PD/:bibliografia-de-aula_3"><span class="pdf-order">13.4.2 </span>Bibliografía de aula</h3>
+<p>Al alumnado se le facilitará en cada unidad didáctica unos apuntes/presentaciones elaborados por el profesor, basados en los libros de texto que encontramos en la bibliografía de departamento y en las referencias web. </p>
+<h3 id="PD/:referencias-web_3"><span class="pdf-order">13.4.3 </span>Referencias web</h3>
+<p>Todas las referencias usadas, se encuentran disponibles en la extensión virtual del aula que proporciona la plataforma Moodle del Centro.</p>
+<h1 id="PD/:modulo-profesional-hacking-etico-5025"><span class="pdf-order">14. </span>Módulo Profesional. Hacking ético  (5025)</h1>
+<h2 id="PD/:resultados-de-aprendizaje_3"><span class="pdf-order">14.1 </span>Resultados de aprendizaje</h2>
+<p>El Real Decreto 479/2020, de 7 de abril, establece para este módulo profesional, los siguientes Resultados de aprendizaje:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">RA</th>
+<th style="text-align: left;">LOGRO</th>
+<th style="text-align: left;">OBJETO</th>
+<th style="text-align: left;">ACCIONES EN EL CONTEXTO DE APRENDIZAJE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">RA 1</td>
+<td style="text-align: left;">Determina</td>
+<td style="text-align: left;">Herramientas de monitorización para detectar vulnerabilidades</td>
+<td style="text-align: left;">Aplicando técnicas de hacking ético</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 2</td>
+<td style="text-align: left;">Ataca y defiende</td>
+<td style="text-align: left;">Comunicaciones inalámbricas</td>
+<td style="text-align: left;">Consiguiendo acceso a redes para demostrar sus vulnerabilidades</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 3</td>
+<td style="text-align: left;">Ataca y defiende</td>
+<td style="text-align: left;">Redes y sistemas</td>
+<td style="text-align: left;">Consiguiendo acceso a información y sistemas de terceros</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 4</td>
+<td style="text-align: left;">Consolida y utiliza</td>
+<td style="text-align: left;">Sistemas comprometidos</td>
+<td style="text-align: left;">Garantizando accesos futuros</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 5</td>
+<td style="text-align: left;">Ataca y defiende</td>
+<td style="text-align: left;">Aplicaciones web</td>
+<td style="text-align: left;">Consiguiendo acceso a datos o funcionalidades no autorizadas</td>
+</tr>
+</tbody>
+</table>
+<h2 id="PD/:contenidos_4"><span class="pdf-order">14.2 </span>Contenidos</h2>
+<h3 id="PD/:contenidos-del-curriculo_4"><span class="pdf-order">14.2.1 </span>Contenidos del currículo</h3>
+<p>Los contenidos son el conjunto de conocimientos, habilidades, destrezas y actitudes cuya asimilación y apropiación por los que aprenden se consideran esenciales para su ejercicio profesional.</p>
+<p>La concreción de los mismos y su secuenciación de aprendizaje se han realizado atendiendo a los siguientes criterios:</p>
+<ul>
+<li>Adecuación a los contenidos básicos reflejados en la normativa estatal, el Real Decreto 479/2020, de 7 de abril.  </li>
+<li>
+<p>Adecuación de los contenidos al requerido en el entorno laboral local.</p>
+</li>
+<li>
+<p>Adaptación de los contenidos a los conocimientos previos del alumnado.</p>
+</li>
+<li>
+<p>Continuidad y progresión en los contenidos.</p>
+</li>
+<li>
+<p>Equilibrio entre las secuencias de conceptos, objetivos y capacidades.</p>
+</li>
+<li>
+<p>Interrelación entre contenidos.</p>
+</li>
+</ul>
+<p>Para una mejor compresión de contenido global, dividiremos el módulo en 9 bloques, intentando agrupar ordenadamente conceptos intrínsecamente conectados.</p>
+<h3 id="PD/:seleccion-y-secuencia-de-contenidos_4"><span class="pdf-order">14.2.2 </span>Selección y secuencia de contenidos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Unidades didácticas</th>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Sesiones</th>
+<th style="text-align: center;">RA</th>
+<th>Criterios</th>
+<th style="text-align: center;">Trimestre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">UD1</td>
+<td style="text-align: left;">Cybersecurity Audit Fundamentals</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">1</td>
+<td>a), b), c), d), e), f), g), h), i)</td>
+<td style="text-align: center;">1º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD2</td>
+<td style="text-align: left;">Web app penetration testing</td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;">5</td>
+<td>a), b), c), d), e), f)</td>
+<td style="text-align: center;">1º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD3</td>
+<td style="text-align: left;">Host &amp; Network Penetration Testing</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">3</td>
+<td>a), b), c), d), e)</td>
+<td style="text-align: center;">2º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD4</td>
+<td style="text-align: left;">Post Exploitation</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">4</td>
+<td>a), b), c), d)</td>
+<td style="text-align: center;">2º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD5</td>
+<td style="text-align: left;">Reporting</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td>g)</td>
+<td style="text-align: center;">2º</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD6</td>
+<td style="text-align: left;">Wi-Fi Security and Pentesting</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">2</td>
+<td>a), b), c), d), e), f)</td>
+<td style="text-align: center;">2º</td>
+</tr>
+</tbody>
+</table>
+<h3 id="PD/:tratamiento-de-temas-transversales_4"><span class="pdf-order">14.2.3 </span>Tratamiento de temas transversales</h3>
+<p>Los temas transversales -no específicos de la materia- y su tratamiento, están vinculados a las situaciones que se presenten en las actividades propuestas, distribuidos a lo largo del módulo.</p>
+<p>Se considerarán los siguientes temas transversales:</p>
+<ul>
+<li>
+<p>Sostenibilidad medioambiental.</p>
+</li>
+<li>
+<p>Educación del consumidor.</p>
+</li>
+<li>
+<p>Salud laboral.</p>
+</li>
+<li>
+<p>Educación para la igualdad de oportunidades entre ambos sexos.</p>
+</li>
+<li>
+<p>Igualdad de oportunidades y respeto a personas de otras culturas y credos.</p>
+</li>
+<li>
+<p>Inserción laboral.</p>
+</li>
+<li>
+<p>Creación de empleo.</p>
+</li>
+<li>
+<p>Educación para la paz y la convivencia.</p>
+</li>
+<li>
+<p>Educación para la ciudadanía.</p>
+</li>
+<li>
+<p>Manejo de documentación técnica en inglés.</p>
+</li>
+</ul>
+<h3 id="PD/:interdisciplinaridad_4"><span class="pdf-order">14.2.4 </span>Interdisciplinaridad</h3>
+<p>En el curso, todos los módulos se relacionan íntimamente con el presente, con cuyo profesorado debemos coordinarnos:</p>
+<ul>
+<li>
+<p>5021. Incidentes de ciberseguridad.</p>
+</li>
+<li>
+<p>5022. Bastionado de redes y sistemas.</p>
+</li>
+<li>
+<p>5023. Puesta en producción segura.</p>
+</li>
+<li>
+<p>5024. Análisis Forense Informático.</p>
+</li>
+<li>
+<p>5025. Hacking ético.</p>
+</li>
+</ul>
+<h2 id="PD/:evaluacion_5"><span class="pdf-order">14.3 </span>Evaluación</h2>
+<p>A continuación, se especifica para cada unidad didáctica los resultados de aprendizaje y los criterios de evaluación correspondientes a la misma, así como los instrumentos de evaluación que se usarán para calificar cada uno de ellos. </p>
+<table>
+<thead>
+<tr>
+<th>Resultados de Aprendizaje</th>
+<th>Criterios de evaluación</th>
+<th style="text-align: center;">Técnica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA1. Determina herramientas de monitorización para detectar vulnerabilidades aplicando técnicas de hacking ético.</td>
+<td>a) Se ha definido la terminología esencial del hacking ético.</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han identificado los conceptos éticos y legales frente al ciberdelito.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha definido el alcance y condiciones de un test de intrusión.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han identificado los elementos esenciales de seguridad: confidencialidad, autenticidad, integridad y disponibilidad.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han identificado las fases de un ataque seguidas por un atacante.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>f) Se han analizado y definido los tipos de vulnerabilidades.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>g) Se han analizado y definido los tipos de ataque.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>h) Se han determinado y caracterizado las diferentes vulnerabilidades existentes.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>i) Se han determinado las herramientas de monitorización disponibles en el mercado adecuadas en función del tipo de organización.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA2. Ataca y defiende en entornos de prueba, comunicaciones inalámbricas consiguiendo acceso a redes para demostrar sus vulnerabilidades.</td>
+<td>a) Se han configurado los distintos modos de funcionamiento de las tarjetas de red inalámbricas.</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han descrito las técnicas de encriptación de las redes inalámbricas y sus puntos vulnerables.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se han generado informes de datos móviles, cumpliendo con los requisitos de la industria forense de telefonía móvil.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se ha accedido a redes inalámbricas vulnerables.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han caracterizado otros sistemas de comunicación inalámbricos y sus vulnerabilidades.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>f) Se han utilizado técnicas de “Equipo Rojo y Azul”.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>g) Se han realizado informes sobre las vulnerabilidades detectadas.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA3. Ataca y defiende en entornos de prueba, redes y sistemas consiguiendo acceso a información y sistemas de terceros.</td>
+<td>a) Se ha recopilado información sobre la red y sistemas objetivo mediante técnicas pasivas.</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se ha creado un inventario de equipos, cuentas de usuario y potenciales vulnerabilidades de la red y sistemas objetivo mediante técnicas activas</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha interceptado tráfico de red de terceros para buscar información sensible.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se ha realizado un ataque de intermediario, leyendo, insertando y modificando, a voluntad, el tráfico intercambiado por dos extremos remotos.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han comprometido sistemas remotos explotando sus vulnerabilidades.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA4. Consolida y utiliza sistemas comprometidos garantizando accesos futuros.</td>
+<td>a) Se han administrado sistemas remotos a través de herramientas de línea de comandos.</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han comprometido contraseñas a través de ataques de diccionario, tablas rainbow y fuerza bruta contra sus versiones encriptadas.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha accedido a sistemas adicionales a través de sistemas comprometidos.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han instalado puertas traseras para garantizar accesos futuros a los sistemas comprometidos.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA5. Ataca y defiende en entornos de prueba, aplicaciones web consiguiendo acceso a datos o funcionalidades no autorizadas.</td>
+<td>a) Se han identificado los distintos sistemas de autenticación web, destacando sus debilidades y fortalezas.</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se ha realizado un inventario de equipos, protocolos, servicios y sistemas operativos que proporcionan el servicio de una aplicación web.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha analizado el flujo de las interacciones realizadas entre el navegador y la aplicación web durante su uso normal.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han examinado manualmente aplicaciones web en busca de las vulnerabilidades más habituales.</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>f) Se ha realizado la búsqueda y explotación de vulnerabilidades web mediante herramientas software.</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="PD/:bibliografia-y-referencias_4"><span class="pdf-order">14.4 </span>Bibliografía y referencias</h2>
+<h3 id="PD/:bibliografia-de-departamento_4"><span class="pdf-order">14.4.1 </span>Bibliografía de departamento</h3>
+<ul>
+<li>
+<p>Hacking: The Art of Exploitation.</p>
+</li>
+<li>
+<p>The Basics of Hacking and Penetration Testing.</p>
+</li>
+<li>
+<p>The Hacker Playbook 2: Practical Guide to Penetration Testing.</p>
+</li>
+<li>
+<p>Penetration Testing – A Hands-On Introduction to Hacking.</p>
+</li>
+</ul>
+<h3 id="PD/:bibliografia-de-aula_4"><span class="pdf-order">14.4.2 </span>Bibliografía de aula</h3>
+<p>Al alumnado se le facilitará en cada unidad didáctica unos apuntes/presentaciones elaborados por el profesor, basados en los libros de texto que encontramos en la bibliografía de departamento y en las referencias web. </p>
+<h3 id="PD/:referencias-web_4"><span class="pdf-order">14.4.3 </span>Referencias web</h3>
+<p>Todas las referencias usadas, se encuentran disponibles en la extensión virtual del aula que proporciona la plataforma Moodle del Centro.</p>
+<h1 id="PD/:modulo-profesional-normativa-de-ciberseguridad-5026"><span class="pdf-order">15. </span>Módulo Profesional. Normativa de ciberseguridad (5026)</h1>
+<h2 id="PD/:resultados-de-aprendizaje_4"><span class="pdf-order">15.1 </span>Resultados de aprendizaje</h2>
+<p>El Real Decreto 479/2020, de 7 de abril, establece para este módulo profesional, los siguientes Resultados de aprendizaje:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">RA</th>
+<th style="text-align: left;">LOGRO</th>
+<th style="text-align: left;">OBJETO</th>
+<th style="text-align: left;">ACCIONES EN EL CONTEXTO DE APRENDIZAJE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">RA 1</td>
+<td style="text-align: left;">Identifica</td>
+<td style="text-align: left;">Los puntos principales de aplicación para asegurar el cumplimiento normativo</td>
+<td style="text-align: left;">Reconociendo funciones y responsabilidades</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 2</td>
+<td style="text-align: left;">Diseña</td>
+<td style="text-align: left;">Sistemas de cumplimiento normativo</td>
+<td style="text-align: left;">Seleccionando la legislación y jurisprudencia de aplicación</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 3</td>
+<td style="text-align: left;">Relaciona</td>
+<td style="text-align: left;">La normativa relevante para el cumplimiento de la responsabilidad penal de las organizaciones y personas jurídicas con los procedimientos establecidos</td>
+<td style="text-align: left;">Recopilando y aplicando las normas vigentes</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 4</td>
+<td style="text-align: left;">Aplica</td>
+<td style="text-align: left;">La legislación nacional de protección de datos de carácter personal</td>
+<td style="text-align: left;">Relacionando los procedimientos establecidos con las leyes vigentes y con la jurisprudencia existente sobre la materia</td>
+</tr>
+<tr>
+<td style="text-align: left;">RA 5</td>
+<td style="text-align: left;">Recopila y aplica</td>
+<td style="text-align: left;">La normativa vigente de ciberseguridad de ámbito nacional e internacional</td>
+<td style="text-align: left;">Actualizando los procedimientos establecidos de acuerdo con las leyes y con la jurisprudencia existente sobre la materia</td>
+</tr>
+</tbody>
+</table>
+<h2 id="PD/:_1"><span class="pdf-order">15.2 </span></h2>
+<h2 id="PD/:contenidos_5"><span class="pdf-order">15.3 </span>Contenidos</h2>
+<h3 id="PD/:contenidos-del-curriculo_5"><span class="pdf-order">15.3.1 </span>Contenidos del currículo</h3>
+<p>Los contenidos son el conjunto de conocimientos, habilidades, destrezas y actitudes cuya asimilación y apropiación por los que aprenden se consideran esenciales para su ejercicio profesional.</p>
+<p>La concreción de los mismos y su secuenciación de aprendizaje se han realizado atendiendo a los siguientes criterios:</p>
+<ul>
+<li>Adecuación a los contenidos básicos reflejados en la normativa estatal, el Real Decreto 479/2020, de 7 de abril.  </li>
+<li>
+<p>Adecuación de los contenidos al requerido en el entorno laboral local.</p>
+</li>
+<li>
+<p>Adaptación de los contenidos a los conocimientos previos del alumnado.</p>
+</li>
+<li>
+<p>Continuidad y progresión en los contenidos.</p>
+</li>
+<li>
+<p>Equilibrio entre las secuencias de conceptos, objetivos y capacidades.</p>
+</li>
+<li>
+<p>Interrelación entre contenidos.</p>
+</li>
+</ul>
+<p>Para una mejor compresión de contenido global, dividiremos el módulo en 9 bloques, intentando agrupar ordenadamente conceptos intrínsecamente conectados.</p>
+<h3 id="PD/:seleccion-y-secuencia-de-contenidos_5"><span class="pdf-order">15.3.2 </span>Selección y secuencia de contenidos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Unidades didácticas</th>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Sesiones</th>
+<th style="text-align: center;">RA</th>
+<th style="text-align: center;">Criterios</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">UD1</td>
+<td style="text-align: left;">Fundamentos Jurídicos de la Seguridad Informática</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">a</td>
+<td style="text-align: center;">1er  trimestre (22 horas)</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD2</td>
+<td style="text-align: left;">Principios y Buenas Prácticas de la Seguridad de la Información</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">b, c, d, e</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">UD3</td>
+<td style="text-align: left;">Gestión de Riesgos</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">a, b, c, d</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">UD4</td>
+<td style="text-align: left;">Normativas, Regulaciones y Legislación</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">a, b, c, d, e, f, g</td>
+<td style="text-align: center;">2o  trimestre (38 horas)</td>
+</tr>
+<tr>
+<td style="text-align: center;">UD5</td>
+<td style="text-align: left;">Sistemas de Gestión de la Seguridad de la Información</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">a, b, c, d, e</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">UD6</td>
+<td style="text-align: left;">Legislación para el Cumplimiento de la Responsabilidad Penal</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">a, b, c, d</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="PD/:tratamiento-de-temas-transversales_5"><span class="pdf-order">15.3.3 </span>Tratamiento de temas transversales</h3>
+<p>Los temas transversales -no específicos de la materia- y su tratamiento, están vinculados a las situaciones que se presenten en las actividades propuestas, distribuidos a lo largo del módulo.</p>
+<p>Se considerarán los siguientes temas transversales:</p>
+<ul>
+<li>
+<p>Sostenibilidad medioambiental.</p>
+</li>
+<li>
+<p>Educación del consumidor.</p>
+</li>
+<li>
+<p>Salud laboral.</p>
+</li>
+<li>
+<p>Educación para la igualdad de oportunidades entre ambos sexos.</p>
+</li>
+<li>
+<p>Igualdad de oportunidades y respeto a personas de otras culturas y credos.</p>
+</li>
+<li>
+<p>Inserción laboral.</p>
+</li>
+<li>
+<p>Creación de empleo.</p>
+</li>
+<li>
+<p>Educación para la paz y la convivencia.</p>
+</li>
+<li>
+<p>Educación para la ciudadanía.</p>
+</li>
+<li>
+<p>Manejo de documentación técnica en inglés.</p>
+</li>
+</ul>
+<h3 id="PD/:interdisciplinaridad_5"><span class="pdf-order">15.3.4 </span>Interdisciplinaridad</h3>
+<p>En el curso, todos los módulos se relacionan íntimamente con el presente, con cuyo profesorado debemos coordinarnos:</p>
+<ul>
+<li>
+<p>5021. Incidentes de ciberseguridad.</p>
+</li>
+<li>
+<p>5022. Bastionado de redes y sistemas.</p>
+</li>
+<li>
+<p>5023. Puesta en producción segura.</p>
+</li>
+<li>
+<p>5024. Análisis Forense Informático.</p>
+</li>
+<li>
+<p>5025. Hacking ético.</p>
+</li>
+</ul>
+<h2 id="PD/:evaluacion_6"><span class="pdf-order">15.4 </span>Evaluación</h2>
+<p>A continuación, se especifica el peso de cada uno de los resultados de aprendizaje, así como el de los criterios de evaluación que lo componen. La mayor o menor ponderación de los criterios se obtiene en base al nivel de dificultad y contenidos a desarrollar para cada criterio. La calificación de cada resultado de aprendizaje será la media ponderada de los distintos criterios de evaluación.</p>
+<table>
+<thead>
+<tr>
+<th>Resultados de Aprendizaje</th>
+<th>Criterios de evaluación</th>
+<th style="text-align: center;">Peso RA</th>
+<th style="text-align: center;">Peso CE</th>
+<th style="text-align: center;">Técnica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA1. Identifica los puntos principales de aplicación para asegurar el cumplimiento normativo reconociendo funciones y responsabilidades.</td>
+<td>a) Se han identificado las bases del cumplimiento normativo a tener en cuenta en las organizaciones.</td>
+<td style="text-align: center;">20%</td>
+<td style="text-align: center;">4%</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han descrito y aplicado los principios de un buen gobierno y su relación con la ética profesional.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se han definido las políticas y procedimientos, así como la estructura organizativa que establezca la cultura del normativo dentro de las organizaciones.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han descrito las funciones o competencias del responsable del cumplimiento normativo dentro de las organizaciones.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han establecido las relaciones con terceros para un correcto cumplimiento normativo.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA2. Diseña sistemas de cumplimiento normativo seleccionando la legislación y jurisprudencia de aplicación.</td>
+<td>a) Se han recogido las principales normativas que afectan a los diferentes tipos de organizaciones.</td>
+<td style="text-align: center;">25%</td>
+<td style="text-align: center;">5%</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han establecido las recomendaciones válidas para diferentes tipos de organizaciones de acuerdo con la normativa vigente (ISO 19.600 entre otras).</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se han realizado análisis y evaluaciones de los riesgos de diferentes tipos de organizaciones de acuerdo con la normativa vigente (ISO 31.000 entre otras).</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">7,5%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se ha documentado el sistema de cumplimiento normativo diseñado.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">7,5%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA3. Relaciona la normativa relevante para el cumplimiento de la responsabilidad penal de las organizaciones y personas jurídicas con los procedimientos establecidos, recopilando y aplicando las normas vigentes.</td>
+<td>a) Se han identificado los riesgos penales aplicables a diferentes organizaciones.</td>
+<td style="text-align: center;">10%</td>
+<td style="text-align: center;">2%</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han implantado las medidas necesarias para eliminar o minimizar los riesgos identificados.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">2%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha establecido un sistema de gestión de cumplimiento normativo penal de acuerdo con la legislación y normativa vigente (Código Penal y UNE 19.601, entre otros).</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han determinado los principios básicos dentro de las organizaciones para combatir el soborno y promover una cultura empresarial ética de acuerdo con la legislación y normativa vigente (ISO 37.001 entre otros).</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA4. Aplica la legislación nacional de protección de datos de carácter personal, relacionando los procedimientos establecidos con las leyes vigentes y con la jurisprudencia existente sobre la materia.</td>
+<td>a) Se han reconocido las fuentes del Derecho de acuerdo con el ordenamiento jurídico en materia de protección de datos de carácter personal.</td>
+<td style="text-align: center;">20%</td>
+<td style="text-align: center;">2%</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se han aplicado los principios relacionados con la protección de datos de carácter personal tanto a nivel nacional como internacional.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se han establecido los requisitos necesarios para afrontar la privacidad desde las bases del diseño.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">2%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se han configurado las herramientas corporativas contemplando el cumplimiento normativo por defecto.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se ha realizado un análisis de riesgos para el tratamiento de los derechos a la protección de datos</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>f) Se han implantado las medidas necesarias para eliminar o minimizar los riesgos identificados en la protección de datos.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>g) Se han descrito las funciones o competencias del delegado de protección de datos dentro de las organizaciones.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RA5.Recopila y aplica la normativa vigente de ciberseguridad de ámbito nacional e internacional, actualizando los procedimientos establecidos de acuerdo con las leyes y con la jurisprudencia existente sobre la materia.</td>
+<td>a) Se ha establecido el plan de revisiones de la normativa, jurisprudencia, notificaciones, etc. jurídicas que puedan afectar a la organización.</td>
+<td style="text-align: center;">25%</td>
+<td style="text-align: center;">5%</td>
+<td style="text-align: center;">Proyecto integrado y actividades teórico-prácticas</td>
+</tr>
+<tr>
+<td></td>
+<td>b) Se ha detectado nueva normativa consultando las bases de datos jurídicas siguiendo el plan de revisiones establecido.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>c) Se ha analizado la nueva normativa para determinar si aplica a la actividad de la organización.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>d) Se ha incluido en el plan de revisiones las modificaciones necesarias, sobre la nueva normativa aplicable a la organización, para un correcto cumplimiento normativo.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5%</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td></td>
+<td>e) Se han determinado e implementado los controles necesarios para garantizar el correcto cumplimiento normativo de las nuevas normativas. incluidas en el plan de revisiones.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5%</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="PD/:bibliografia-y-referencias_5"><span class="pdf-order">15.5 </span>Bibliografía y referencias</h2>
+<h3 id="PD/:bibliografia-de-departamento_5"><span class="pdf-order">15.5.1 </span>Bibliografía de departamento</h3>
+<ul>
+<li>Aspectos jurídicos de la ciberseguridad. Ofelia Tejerina. Ed. Ra-Ma</li>
+</ul>
+<h3 id="PD/:bibliografia-de-aula_5"><span class="pdf-order">15.5.2 </span>Bibliografía de aula</h3>
+<p>Al alumnado se le facilitará en cada unidad didáctica unos apuntes/presentaciones elaborados por el profesor, basados en los libros de texto que encontramos en la bibliografía de departamento y en las referencias web. </p>
+<h3 id="PD/:referencias-web_5"><span class="pdf-order">15.5.3 </span>Referencias web</h3>
+<p>Todas las referencias usadas, se encuentran disponibles en la extensión virtual del aula que proporciona la plataforma Moodle del Centro.</p>
+<h1 id="PD/:registro-de-versiones"><span class="pdf-order">16. </span>Registro de versiones</h1>
+<table>
+<thead>
+<tr>
+<th>Responsable</th>
+<th>Acción (Redactado, Revisado)</th>
+<th>Fecha</th>
+<th>Versión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carmona Martos, Alejandro<br/> Fenández Oliver, Eduardo<br/> Rivas Sández, Manuel<br/> Romero Santos, David</td>
+<td>Redactado</td>
+<td>28/10/2022</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Carmona Martos, Alejandro<br/> Fenández Oliver, Eduardo<br/> Rivas Sández, Manuel<br/> Romero Santos, David</td>
+<td>Revisado</td>
+<td></td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>Fenández Oliver, Eduardo<br/> Rivas Sández, Manuel<br/> Romero Santos, David<br/> Ureña Lara, Fernando</td>
+<td>Revisado</td>
+<td>06/11/2023</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>Fenández Oliver, Eduardo<br/> Ortega Nogueras, Francisco Javier<br/> Rivas Sández, Manuel<br/> Romero Santos, David</td>
+<td>Revisado</td>
+<td>31/10/2024</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</article></body></html>
