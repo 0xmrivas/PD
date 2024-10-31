@@ -19,8 +19,8 @@ jobs:
     - name: Install Python and dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y python3-pip python3-cffi python3-brotli libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0
-        pip3 install wheel mkdocs mkdocs-material==9.5.42 mkdocs-with-pdf
+        sudo apt-get install -y python3-pip 
+        pip3 install mkdocs mkdocs-material==9.5.42 mkdocs-with-pdf
 
     - name: Run build-pdf.sh
       run: |
