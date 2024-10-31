@@ -19,8 +19,7 @@ jobs:
         pip install wheel mkdocs mkdocs-material mkdocs-with-pdf django-weasyprint
     - name: Run build-pdf.sh
       run: |
-        chmod +x build-pdf.sh
-        ./build-pdf.sh
-  
+        cd mkdocs-pd
+        mkdocs build
     - name: Push changes to repository
       run: git push origin main -f
