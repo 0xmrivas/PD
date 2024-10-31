@@ -1,97 +1,20 @@
 <article id="doc-cover">
-    <p class="cover-year">{{course_year}}</p>
-    <div class="cover-title">
+    <div class="wrapper">
+        <div class="upper">
+            <p>{{course_year}}</p>
+        </div>
         <h1>{{ cover_title | e }}</h1>
         <h2>{{ cover_subtitle | e }}</h2>
+        <div class="properties">
+            <p>---------------------------------------------</p>
+            <p id="author">{{ department | e }}</p>
+            <p id="copyright">{{ institution | e }}</p>
+            </address>
+        </div>
     </div>
 </article>
-<div class="cover-department">
-    <p>---------------------------------------------</p>
-    {% if department is defined %}
-        <p id="department">{{ department | e }}</p>
-    {% endif %}
-    {% if institution is defined %}
-        <p id="institution">{{ institution | e }}</p>
-    {% endif %}
-</div>
-
 
 <style>
-@page :first {
-    size: A4;
-    margin: 2cm 2cm 11cm 1cm;
-    background-image: url('{{ cover_logo | to_url }}');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-@page {
-    size: A4;
-    margin: 2.54cm; /* Aplica margen de 2.54cm a todo el documento */
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-#doc-cover {
-    display: flex;
-    flex-direction: column;
-    height: 16.7cm; /* Altura total de la página */
-    color: white !important;
-    overflow: hidden; /* Previene desbordamiento */
-}
-
-.cover-year {
-    flex: 0 0 2cm;
-    background-color: #E93456  !important;
-    text-align: right;
-    font-size: 11pt;
-    margin: 0cm;
-    color: white !important;
-}
-
-.cover-title {
-    flex: 0 0 18cm; /* Permite que crezca y ocupe el espacio disponible */
-    max-height: 18cm;
-    background-color: #E93456  !important;
-    align-items: flex-start;
-    text-align: left !important;
-    padding: 1cm;
-    margin: 0cm;
-    color: white !important;
-
-    h1 {
-        padding-top: 4cm;
-        font-size: 36pt;
-        border-bottom: none !important; 
-        margin-bottom: 0.4cm; /* Reduce la separación inferior de h1 */
-    }
-    h2 {
-        border-bottom: none !important; 
-        font-size: 16pt;
-        margin-top: 0; /* Elimina el margen superior de h2 */
-    }
-}
-
-.cover-department {
-    text-align: left !important;
-    position: absolute;
-    bottom: -10cm; /* Ajusta la distancia desde el borde inferior */
-    left: 0cm;    
-    background-color: #E93456  !important;
-    color: white !important;
-    max-width: 70%;
-    padding: 1cm;
-    overflow-y: auto; /* Permite scroll si el contenido es muy largo */
-}
-
-/* El resto de tus estilos permanecen igual */
-.cover-title h1 {
-    border-bottom: 1px solid #E93456  !important; }
-
-.cover-title h2 {
-    border-bottom: 1px solid #E93456  !important; }
 
 @font-face {
     font-family: 'Source Sans Pro';
@@ -103,8 +26,65 @@
 @font-face {
     font-family: 'Source Sans Pro';
     src: url('assets/fonts/SourceSans3-Bold.ttf.woff') format('woff');
-    font-weight: bold; /* O ajusta según sea necesario */
-    font-style: italic; /* Cambia a normal si no deseas itálico */
+    font-weight: bold;
+    font-style: italic;
+}
+
+@page {
+    size: A4;
+    margin: 2.54cm; /* Establece margen general */
+    font-family: 'Source Sans Pro', sans-serif;
+    background: none;
+}
+
+@page :first {
+    margin: 0; /* Sin margen en la primera página */
+}
+
+.wrapper {
+    position: relative; /* Posicionamiento para contenido absoluto */
+    padding: 2cm;
+    background-image: url('{{ cover_logo | to_url }}');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+
+    h1,
+    h2 {
+        border-bottom: none !important;
+        text-align: left !important;
+        padding-left: 1cm;
+    }
+
+    h1 {
+        padding-top: 6cm;
+        font-size: 36pt;
+        margin-bottom: 0.4cm;
+    }
+
+    h2 {
+        font-size: 18pt;
+    }
+
+    .upper p {
+        font-size: 11pt;
+        text-align: right;
+        padding-top: 2cm;
+        padding-right: 1cm;
+    }
+
+    .properties {
+        position: absolute;
+        bottom: 2cm; /* Ubica al pie del wrapper */
+        
+        p {
+            padding-left: 1cm;
+            font-size: 11pt;
+            margin-top: 0.4cm;
+        }
+    }
 }
 
 body {
@@ -116,29 +96,26 @@ p {
 }
 
 table {
-  border-collapse: collapse !important;
-  width: 100% !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
 
-  tr {
-    &:nth-child(even) {
-      background-color: #FFE5EA;
+    tr:nth-child(even) {
+        background-color: #FFE5EA;
     }
-  }
 
-  th {
-    background-color: #E93456 !important;
-    color: white !important;
-    font-weight: bold !important;
-    padding: 10px !important;
-    text-transform: uppercase;
-  }
+    th {
+        background-color: #E93456 !important;
+        color: white !important;
+        font-weight: bold !important;
+        padding: 10px !important;
+        text-transform: uppercase;
+    }
 
-  th, td {
-    vertical-align: middle !important;
-    text-align: left !important;
-    padding: 10px !important;
-    height: 100% !important;
-  }
+    th, td {
+        vertical-align: middle !important;
+        text-align: left !important;
+        padding: 10px !important;
+    }
 }
 
 

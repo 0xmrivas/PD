@@ -41,8 +41,10 @@ plugins:
       cover: true
       toc_title: "Índice"
       cover_title: Programación Didáctica
-      cover_subtitle: Curso de especialización en ciberffffffffffffffffffffff ffffffffffffffffff berffffffffffffffffffffff
-      cover_logo: assets/portada-ies-rafael-alberti.svg 
+      cover_subtitle: Curso de especialización en ciberffffffffffffffffffffff ffffffffffffffffff 
+      cover_logo: assets/portada-ies-rafael-alberti.svg
+      cover_logo2: assets/portada.png
+
       custom_template_path: docs/templates
       output_path: ../../2024_CIBER_vrs_2.pdf
 extra:
