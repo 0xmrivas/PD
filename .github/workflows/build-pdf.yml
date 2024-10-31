@@ -22,11 +22,11 @@ jobs:
         sudo apt-get install -y python3-pip 
         pip3 install mkdocs mkdocs-material==9.5.42 mkdocs-with-pdf
 
-    - name: Run build-pdf.sh
+    - name: Run build
       run: |
         chmod +x build-pdf.sh
         ./build-pdf.sh
-  
+        
     - name: Configure Git
       run: |
         git config --global user.name "github-actions[bot]"
