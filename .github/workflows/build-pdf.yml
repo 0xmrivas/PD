@@ -24,8 +24,8 @@ jobs:
 
     - name: Run build-pdf.sh
       run: |
-        chmod +x build-pdf.sh
-        ./build-pdf.sh
+       cd mkdocs-resumen
+       mkdocs build
 
 
 
