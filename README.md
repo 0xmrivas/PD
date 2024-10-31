@@ -9,4 +9,3 @@ Este repositorio contiene los archivos fuente y los scripts necesarios para la g
 3. Si es necesario, modificar la parte común del **Resumen** en el archivo `resumen.md` de la carpeta `src`.
 4. Realizar un **push** al repositorio. Los archivos `PD.pdf` y `resumen.pdf` se generarán automáticamente en la raíz del repositorio.
 
-
