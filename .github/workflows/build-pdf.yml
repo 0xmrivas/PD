@@ -27,6 +27,9 @@ jobs:
        cd mkdocs-resumen
        mkdocs build
 
+    - name: Push changes to repository
+      run: git push origin HEAD:main
+
 
 
 
