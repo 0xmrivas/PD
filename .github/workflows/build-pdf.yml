@@ -24,7 +24,9 @@ jobs:
 
     - name: Run build-pdf.sh
       run: |
-        build-pdf.sh
+        chmod +x build-pdf.sh
+        ./build-pdf.sh
+
 
 
 
