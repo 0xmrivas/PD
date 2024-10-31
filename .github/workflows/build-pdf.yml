@@ -23,4 +23,4 @@ jobs:
         ./build-pdf.sh
   
     - name: Push changes to repository
-      run: git push origin HEAD:main
+      run: git push origin main -f
