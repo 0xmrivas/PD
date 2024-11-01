@@ -94,21 +94,21 @@
     }
 }
 
-body :not(.wrapper) p,
-body :not(.wrapper) h1,
-body :not(.wrapper) h2,
-body :not(.wrapper) h3,
-body :not(.wrapper) h4,
-body :not(.wrapper) h5,
-body :not(.wrapper) h6,
-body :not(.wrapper) li,
-body :not(.wrapper) a,
-body :not(.wrapper) span,
-body :not(.wrapper) div,
-body :not(.wrapper) th,
-body :not(.wrapper) td {
-    color: black !important; /* Aplica negro solo al resto del documento */
+/* Aplica color negro solo al contenido del documento dentro de .md-content__inner */
+.md-content__inner p,
+.md-content__inner h1,
+.md-content__inner h2,
+.md-content__inner h3,
+.md-content__inner h4,
+.md-content__inner h5,
+.md-content__inner h6,
+.md-content__inner li,
+.md-content__inner a,
+.md-content__inner span,
+.md-content__inner div {
+    color: black !important; /* Color negro solo para el contenido */
 }
+
 
 p {
     text-align: justify;
