@@ -1,23 +1,21 @@
 <article id="doc-cover">
     <div class="wrapper">
         <div class="upper">
-            <p>{{course_year}}</p>
+            <p>{{course_year}}</p> <!-- Año del curso, alineado a la derecha -->
         </div>
         <div class="title">
-            <h1>{{ cover_title | e }}</h1>
-            <h2>{{ cover_subtitle | e }}</h2>
+            <h1>{{ cover_title | e }}</h1> <!-- Título principal -->
+            <h2>{{ cover_subtitle | e }}</h2> <!-- Subtítulo -->
         </div>
         <div class="properties">
-            <p>---------------------------------------------</p>
-            <p id="author">{{ department | e }}</p>
-            <p id="copyright">{{ institution | e }}</p>
-            </address>
+            <p>---------------------------------------------</p> <!-- Línea separadora -->
+            <p id="author">{{ department | e }}</p> <!-- Departamento -->
+            <p id="copyright">{{ institution | e }}</p> <!-- Institución -->
         </div>
     </div>
 </article>
 
 <style>
-
 @page {
     size: A4;
     margin: 2.54cm;
@@ -26,43 +24,41 @@
 }
 
 @page :first {
-    margin: 0;
+    margin: 0; /* Sin margen en la primera página */
 }
 
 .wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Disposición en columna de los bloques */
     justify-content: space-between;
     align-items: stretch;
-    padding: 2cm 2cm;
-    background-image: url('{{ cover_logo | to_url }}');
+    padding: 2cm;
+    background-image: url('{{ cover_logo | to_url }}'); /* Imagen de fondo */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: white;
-    width: 21cm; /* Anchura de A4 menos márgenes */
-    height: 29.7cm; /* Altura de A4 menos márgenes */
+    width: 21cm; /* Anchura de A4 */
+    height: 29.7cm; /* Altura de A4 */
     max-width: 21cm;
     min-width: 21cm;
-    max-height:29.7cm;
+    max-height: 29.7cm;
     min-height: 29.7cm;
 }
+
 .upper {
-    flex: 0 0 2.97cm; /* 10% de 29.7cm */
-    max-height: 2.97cm;
-    min-height: 2.97cm;
+    flex: 0 0 2.97cm; /* Ocupa el 10% de la altura total */
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Alineación a la derecha */
 }
+
 .title {
-    flex: 0 0 20.79cm; /* 70% de 29.7cm */
-    max-height: 20.79cm;
-    min-height: 20.79cm;
+    flex: 0 0 20.79cm; /* Ocupa el 70% de la altura total */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Centra verticalmente el título y subtítulo */
 
     h1, h2 {
         border-bottom: none !important;
@@ -83,20 +79,18 @@
 }
 
 .properties {
-    flex: 0 0 5.94cm; /* 20% de 29.7cm */
-    max-height: 5.94cm;
-    min-height: 5.94cm;
+    flex: 0 0 5.94cm; /* Ocupa el 20% de la altura total */
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start; /* Alineación en la parte superior */
     align-items: flex-start;
-    gap: 0.2cm; /* Espacio entre cada párrafo */
+    gap: 0.2cm; /* Espaciado entre párrafos */
     padding-bottom: 1cm;
 
     p {
         padding-left: 1cm;
         font-size: 11pt;
-        margin: 0; /* Elimina márgenes adicionales */
+        margin: 0; /* Sin márgenes adicionales */
     }
 }
 
@@ -130,5 +124,4 @@ table {
         padding: 10px !important;
     }
 }
-
 </style>
