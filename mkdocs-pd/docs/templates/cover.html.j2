@@ -43,58 +43,31 @@
     color: white;
     width: 21cm; /* Anchura de A4 menos márgenes */
     height: 28cm; /* Altura de A4 menos márgenes */
-    max-height:21cm;
-    min-height: 21cm;
-    max-width: 28cm;
-    min-width: 28cm;
+    max-width: 21cm;
+    min-width: 21cm;
+    max-height:28cm;
+    min-height: 28cm;
 }
-
 .upper {
-    flex: 0 0 2.8cm; /* 10% de 29cm */
+    flex: 0 0 2.8cm; /* 10% de 25cm */
     max-height: 2.8cm;
     min-height: 2.8cm;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    
-    p {
-        font-size: 11pt;
-        text-align: right;
-        padding-right: 1cm;
-        margin: 0;
-    }
 }
-
 .title {
-    flex: 0 0 19.6cm; /* 70% de 29.7cm */
+    flex: 0 0 19.6cm; /* 70% de 25cm */
     max-height: 19.6cm;
     min-height: 19.6cm;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    h1, h2 {
-        border-bottom: none !important;
-        text-align: left !important;
-        padding-left: 1cm;
-        margin: 0;
-    }
-
-    h1 {
-        padding-top: 1cm;
-        font-size: 36pt;
-        margin-bottom: 0.4cm;
-    }
-
-    h2 {
-        font-size: 18pt;
-    }
 }
-
 .properties {
-    flex: 0 0 5.6cm; /* 20% de 29.7cm */
-    max-height: 5.6cm;
-    min-height: 5.6cm;
+    flex: 0 0 5.6cm; /* 20% de 28cm */
+    max-height: 5cm;
+    min-height: 5cm;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
