@@ -94,9 +94,20 @@
     }
 }
 
-/* Color blanco directo en todos los elementos de texto */
-p, h1, h2, h3, h4, h5, h6, th, td, li, a, span, div {
-    color: black;
+body :not(.wrapper) p,
+body :not(.wrapper) h1,
+body :not(.wrapper) h2,
+body :not(.wrapper) h3,
+body :not(.wrapper) h4,
+body :not(.wrapper) h5,
+body :not(.wrapper) h6,
+body :not(.wrapper) li,
+body :not(.wrapper) a,
+body :not(.wrapper) span,
+body :not(.wrapper) div,
+body :not(.wrapper) th,
+body :not(.wrapper) td {
+    color: black !important; /* Aplica negro solo al resto del documento */
 }
 
 p {
