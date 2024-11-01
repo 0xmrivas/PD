@@ -34,7 +34,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    padding: 0 2cm;
+    padding: 2cm 2cm;
     background-image: url('{{ cover_logo | to_url }}');
     background-position: center;
     background-size: cover;
@@ -88,16 +88,15 @@
     min-height: 5.94cm;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Alinea los elementos en la parte superior */
-    align-items: flex-start;
-    gap: 0.2cm; /* Espacio entre cada párrafo */
+    justify-content: flex-end;
 
     p {
         padding-left: 1cm;
         font-size: 11pt;
-        margin: 0;
+        margin: 0.2cm 0; /* Espacio reducido entre párrafos */
     }
 }
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
 }
