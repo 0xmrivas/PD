@@ -1,3 +1,87 @@
+<article id="doc-cover">
+    <div class="wrapper">
+        <div class="upper">
+            <p>{{course_year}}</p>
+        </div>
+        <div class="title">
+            <h1>{{ cover_title | e }}</h1>
+            <h2>{{ cover_subtitle | e }}</h2>
+        </div>
+        <div class="properties">
+            <p>---------------------------------------------</p>
+            <p id="author">{{ department | e }}</p>
+            <p id="copyright">{{ institution | e }}</p>
+            </address>
+        </div>
+    </div>
+</article>
+
+<style>
+
+@page {
+    size: A4;
+    margin: 2.54cm;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: none;
+}
+
+@page :first {
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0 2cm;
+    background-image: url('{{ cover_logo | to_url }}');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    width: 21cm; /* Anchura de A4 menos márgenes */
+    height: 29.7cm; /* Altura de A4 menos márgenes */
+    max-width: 21cm;
+    min-width: 21cm;
+    max-height:29.7cm;
+    min-height: 29.7cm;
+}
+.upper {
+    flex: 0 0 2.97cm; /* 10% de 29.7cm */
+    max-height: 2.97cm;
+    min-height: 2.97cm;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.title {
+    flex: 0 0 20.79cm; /* 70% de 29.7cm */
+    max-height: 20.79cm;
+    min-height: 20.79cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1, h2 {
+        border-bottom: none !important;
+        text-align: left !important;
+        padding-left: 1cm;
+        margin: 0;
+    }
+
+    h1 {
+        padding-top: 1cm;
+        font-size: 36pt;
+        margin-bottom: 0.4cm;
+    }
+
+    h2 {
+        font-size: 18pt;
+    }
+}
+
 .properties {
     flex: 0 0 5.94cm; /* 20% de 29.7cm */
     max-height: 5.94cm;
@@ -14,3 +98,35 @@
         margin: 0;
     }
 }
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
+    text-align: justify;
+}
+
+table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+
+    tr:nth-child(even) {
+        background-color: #FFE5EA;
+    }
+
+    th {
+        background-color: #E93456 !important;
+        color: white !important;
+        font-weight: bold !important;
+        padding: 10px !important;
+        text-transform: uppercase;
+    }
+
+    th, td {
+        vertical-align: middle !important;
+        text-align: left !important;
+        padding: 10px !important;
+    }
+}
+
+</style>
