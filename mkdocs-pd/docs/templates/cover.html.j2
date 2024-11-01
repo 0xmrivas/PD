@@ -1,65 +1,63 @@
-<article id="doc-cover">
-    <div class="wrapper">
-        <div class="upper">
-            <p>{{course_year}}</p>
-        </div>
-        <h1>{{ cover_title | e }}</h1>
-        <h2>{{ cover_subtitle | e }}</h2>
-        <div class="properties">
-            <p>---------------------------------------------</p>
-            <p id="author">{{ department | e }}</p>
-            <p id="copyright">{{ institution | e }}</p>
-            </address>
-        </div>
-    </div>
-</article>
-
-<style>
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('assets/fonts/SourceSans3-Regular.ttf.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('assets/fonts/SourceSans3-Bold.ttf.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-}
-
 @page {
     size: A4;
-    margin: 2.54cm; /* Establece margen general */
+    margin: 2.54cm;
     font-family: 'Source Sans Pro', sans-serif;
     background: none;
 }
 
 @page :first {
-    margin: 0; /* Sin margen en la primera página */
+    margin: 0;
 }
 
 .wrapper {
-    padding: 2cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0 2cm;
     background-image: url('{{ cover_logo | to_url }}');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: white;
-    height: 25cm
+    width: 17cm; /* Anchura de A4 menos márgenes */
+    height: 25cm; /* Altura de A4 menos márgenes */
+}
 
-    h1,
-    h2 {
+.upper {
+    flex: 0 0 2.5cm; /* 10% de 25cm */
+    max-height: 2.5cm;
+    min-height: 2.5cm;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    p {
+        font-size: 11pt;
+        text-align: right;
+        padding-right: 1cm;
+        margin: 0;
+    }
+}
+
+.title {
+    flex: 0 0 17.5cm; /* 70% de 25cm */
+    max-height: 17.5cm;
+    min-height: 17.5cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1, h2 {
         border-bottom: none !important;
         text-align: left !important;
         padding-left: 1cm;
+        margin: 0;
     }
 
     h1 {
-        padding-top: 6cm;
+        padding-top: 1cm;
         font-size: 36pt;
         margin-bottom: 0.4cm;
     }
@@ -67,22 +65,20 @@
     h2 {
         font-size: 18pt;
     }
+}
 
-    .upper p {
+.properties {
+    flex: 0 0 5cm; /* 20% de 25cm */
+    max-height: 5cm;
+    min-height: 5cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    p {
+        padding-left: 1cm;
         font-size: 11pt;
-        text-align: right;
-        padding-top: 2cm;
-        padding-right: 1cm;
-    }
-
-    .properties {
-        bottom: 2cm; /* Ubica al pie del wrapper */
-        
-        p {
-            padding-left: 1cm;
-            font-size: 11pt;
-            margin-top: 0.4cm;
-        }
+        margin-top: 0.4cm;
     }
 }
 
@@ -116,5 +112,3 @@ table {
         padding: 10px !important;
     }
 }
-
-</style>
