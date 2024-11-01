@@ -38,7 +38,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: white;
+    color: white!important;
     width: 21cm; /* Anchura de A4 */
     height: 29.7cm; /* Altura de A4 */
     max-width: 21cm;
@@ -94,29 +94,9 @@
     }
 }
 
-#doc-to p,
-#doc-to h1,
-#doc-to h2,
-#doc-to h3,
-#doc-to h4,
-#doc-to h5,
-#doc-to h6,
-#doc-to li,
-#doc-to a,
-#doc-to span,
-#doc-to div,
-.d-content__inner p,
-.d-content__inner h1,
-.d-content__inner h2,
-.d-content__inner h3,
-.d-content__inner h4,
-.d-content__inner h5,
-.d-content__inner h6,
-.d-content__inner li,
-.d-content__inner a,
-.d-content__inner span,
-.d-content__inner div {
-    color: black !important;
+/* Color blanco directo en todos los elementos de texto */
+p, h1, h2, h3, h4, h5, h6, th, td, li, a, span, div {
+    color: black;
 }
 
 p {
